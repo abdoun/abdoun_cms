@@ -1,0 +1,228 @@
+<script type="text/javascript">
+	jQuery.fn.ratings = function(stars, initialRating) {
+
+  //Save  the jQuery object for later use.
+  var elements = this;
+  
+  //Go through each object in the selector and create a ratings control.
+  return this.each(function() {
+  
+    //Make sure intialRating is set.
+    if(!initialRating)
+      initialRating = <score_tag />;
+      
+    //Save the current element for later use.
+    var containerElement = this;
+    
+    //grab the jQuery object for the current container div
+    var container = jQuery(this);
+    
+    //Create an array of stars so they can be referenced again.
+    var starsCollection = Array();
+    
+    //Save the initial rating.
+    containerElement.rating = initialRating;
+    
+    //Set the container div's overflow to auto.  This ensure it will grow to
+    //hold all of its children.
+    container.css('overflow', 'auto');
+    
+    //create each star
+    for(var starIdx = 0; starIdx < stars; starIdx++) {
+      
+      //Create a div to hold the star.
+      var starElement = document.createElement('div');
+      
+      //Get a jQuery object for this star.
+      var star = jQuery(starElement);
+      
+      //Store the rating that represents this star.
+      starElement.rating = starIdx + 1;
+      
+      //Add the style.
+      star.addClass('jquery-ratings-star');
+      
+      //Add the full css class if the star is beneath the initial rating.
+      if(starIdx < initialRating) {
+        star.addClass('jquery-ratings-full');
+      }
+      
+      //add the star to the container
+      container.append(star);
+      starsCollection.push(star);
+      
+      //hook up the click event
+      star.click(function() {
+        //When clicked, fire the 'ratingchanged' event handler.  Pass the rating through as the data argument.
+        elements.triggerHandler("ratingchanged", {rating: this.rating});
+        containerElement.rating = this.rating;
+		
+      });
+      
+      star.mouseenter(function() {
+        //Highlight selected stars.
+        for(var index = 0; index < this.rating; index++) {
+          starsCollection[index].addClass('jquery-ratings-full');
+        }
+        //Unhighlight unselected stars.
+        for(var index = this.rating; index < stars; index++) {
+          starsCollection[index].removeClass('jquery-ratings-full');
+        }
+      });
+      
+      container.mouseleave(function() {
+        //Highlight selected stars.
+        for(var index = 0; index < containerElement.rating; index++) {
+          starsCollection[index].addClass('jquery-ratings-full');
+        }
+        //Unhighlight unselected stars.
+        for(var index = containerElement.rating; index < stars ; index++) {
+          starsCollection[index].removeClass('jquery-ratings-full');
+        }
+      });
+    }
+  });
+};
+_(document).ready(function() {
+						   
+   
+  _('#example-2').ratings(5).bind('ratingchanged', function(event, data) {
+    //_('#example-rating-2').text(data.rating);
+    _("#example-2").html("<center><img src='<directory_tag />images/loading.gif' border='0'/></center>");
+    _.get('<directory_tag />classes/block/controls/ajax.php?l=<lang_tag />&rn=<rand_tag />&page=controls&type=controls&event=rate&id=<id_tag />&brand=<brand_tag />&score=' + data.rating, function(data) {
+      _('#example-2').html(data);
+      });
+  });
+});
+</script>
+<style type="text/css">
+<!--
+    .jquery-ratings-star 
+    {
+      width: 36px;
+      height: 36px;
+      background-image: url('<directory_tag />images/empty-star.png');
+      background-repeat: no-repeat;
+      position: relative;
+      float: <_align_ />;
+      margin-right: 2px;
+    }
+    
+    .jquery-ratings-full 
+    {
+      background-image: url('<directory_tag />images/full-star.png');
+    }
+    #controls_result span
+    {
+        border-color: #ff0000;
+        border-style: solid;
+        border-width: 1px;
+        color:#ff0000;
+        background-color: #FCE5E5;
+    }
+    #controls_result div
+    {
+        border-color: #008000;
+        border-style: solid;
+        border-width: 1px;
+        color:#339966;
+        background-color: #E5FEDA;
+        width:100%;
+    }
+    #controls_title
+    {
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #0072BC;
+        color: #fff;
+        font-weight:bold;
+        font-size: 14px;
+        text-align: center;
+        font-family: tahoma;
+        height:5px;
+    }
+    #controls #form input
+    {
+        font-family: tahoma;
+    }
+    #controls #form_controls
+    {
+        font-family: tahoma;
+        border-color: #fff;
+        width: 140px;
+        border-width: 0;
+        margin-top: 5px;
+        padding: 5px;
+        text-align: <_align_ />;
+    }
+    #controls a
+    {
+        font-family: tahoma;
+        font-size: 12px;
+        color: #11A8E7;
+        text-decoration: none;
+        vertical-align: middle;        
+    }
+    #controls a:hover
+    {
+        font-family: tahoma;
+        font-size: 12px;
+        color: #11A8E7;
+        text-decoration: none;
+    }
+    #controls #counter
+    {
+        float: <align_ />;
+        width: 40%;
+        text-align: center;
+    }
+    #controls #rating
+    {
+        float: <_align_ />;
+        width: 40%;
+        text-align: <_align_ />;
+    }
+    #controls .spacing
+    {
+        clear: both;
+        width: 100%;
+        height:2px;
+        background-color: #0072BC;
+    }
+    #controls #comment
+    {
+        float: <_align_ />;
+        width: 95%;
+        text-align: <_align_ />;
+    }
+    #controls #comments #title
+    {
+        float: <_align_ />;
+        width: 60%;
+        text-align: <_align_ />;
+        font-weight: bold;
+        padding: 5px;
+    }
+    #controls #comments #name
+    {
+        float: <align_ />;
+        width: 30%;
+        text-align: <_align_ />;
+        font-weight: bold;
+    }
+    #controls #comments #notes
+    {
+        clear: both;
+        width: 95%;
+        padding: 5px;
+    }
+    #controls #comments #admin_note
+    {
+        clear: both;
+        width: 95%;
+        padding: 5px;
+        color: #808080;
+    }
+-->
+</style><br />
+<div id="controls_title"><title_ /></div><div id="controls"><tag /></div><br />

@@ -1,0 +1,2 @@
+[26-Jan-2013 15:17:47 America/New_York] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required '../../../language/.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/clusoh/public_html/classes/block/page/ajax.php on line 29
+[26-Jan-2013 15:17:52 America/New_York] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required '../../../language/.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/clusoh/public_html/classes/block/page/ajax.php on line 29

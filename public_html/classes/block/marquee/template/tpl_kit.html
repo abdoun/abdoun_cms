@@ -1,0 +1,43 @@
+<!--<script type="text/javascript" src="<url_ />slider_kit/js/external/_oldies/jquery-1.3.min.js"></script>-->
+<script type="text/javascript" src="<url_ />slider_kit/js/external/jquery.easing.1.3.min.js"></script>
+<!--<script type="text/javascript" src="<url_ />slider_kit/js/external/jquery.mousewheel.min.js"></script>-->
+
+<!-- Slider Kit scripts -->
+<script type="text/javascript" src="<url_ />slider_kit/js/sliderkit/jquery.sliderkit.1.9.2.pack.js"></script>
+
+<!-- Slider Kit launch -->
+<script type="text/javascript">
+	_(window).load(function(){ //$(window).load() must be used instead of $(document).ready() because of Webkit compatibility				
+
+		// News slider > Minimal
+		_(".newslider-minimal").sliderkit({
+			auto:true,
+			circular:true,
+			shownavitems:1,
+			panelfx:"sliding",
+			panelfxspeed:400,
+			panelfxeasing:"easeOutCirc",
+			mousewheel:false,
+			verticalnav:true,
+			verticalslide:true
+		});
+
+	});	
+</script>
+
+<!-- Slider Kit styles -->
+<link rel="stylesheet" type="text/css" href="<url_ />slider_kit/css/sliderkit-core.css" media="screen, projection" />
+<link rel="stylesheet" type="text/css" href="<url_ />slider_kit/css/sliderkit-demos.css" media="screen, projection" />
+
+<!-- Slider Kit compatibility -->	
+<!--[if IE 6]><link rel="stylesheet" type="text/css" href="../lib/css/sliderkit-demos-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" href="../lib/css/sliderkit-demos-ie7.css" /><![endif]-->
+<!--[if IE 8]><link rel="stylesheet" type="text/css" href="../lib/css/sliderkit-demos-ie8.css" /><![endif]-->
+
+<!-- Site styles -->
+<link rel="stylesheet" type="text/css" href="<url_ />slider_kit/css/sliderkit-site.css" media="screen, projection" />
+<div class="sliderkit newslider-minimal">
+<div class="sliderkit-legend"><img_tag_ /> </div>
+<div class="sliderkit-panels"><tag /></div>
+</div>
+</div>

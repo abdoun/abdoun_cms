@@ -1,0 +1,117 @@
+Options +FollowSymLinks
+
+RewriteEngine On
+
+
+
+
+
+
+
+AddType 'text/html; charset=utf-8' html
+
+
+
+
+
+
+
+# -FrontPage-
+
+
+
+IndexIgnore .htaccess */.??* *~ *# */HEADER* */README* */_vti*
+
+
+
+
+
+
+
+<Limit GET POST>
+
+
+
+	order deny,allow
+
+
+
+	deny from all
+
+
+
+	allow from all
+
+
+
+</Limit>
+
+
+
+
+
+
+
+<Limit PUT DELETE>
+
+
+
+	order deny,allow
+
+
+
+	deny from all
+
+
+
+</Limit>
+
+
+
+# STRONG HTACCESS PROTECTION</code>
+
+<Files ~ "^.*\.([Hh][Tt][Aa])">
+
+order allow,deny
+
+deny from all
+
+satisfy all
+
+</Files>
+
+
+
+# protect wp-config.php
+
+<files config.inc.php>
+
+Order deny,allow
+
+Deny from all
+
+</files>
+
+
+
+# protect wp-config.php
+
+<files connect.inc.php>
+
+Order deny,allow
+
+Deny from all
+
+</files>
+
+
+
+
+
+
+
+
+
+DirectoryIndex 													./index.php
+
+
