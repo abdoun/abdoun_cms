@@ -23,6 +23,13 @@ clean::clean_http_sub_arrays();
 //clean::clear_array($_GET);
 //clean::clear_array($_SESSION);
 //print($_SERVER["HTTP_REFERER"]);
+/**
+* @todo get the requested language or default language from db
+**/
+//print_r($_COOKIE);
+//print('<br />');
+languages_menu::set();
+//print_r($_COOKIE);
 if(empty($_GET['page']))
 {
     $_GET['page']='user_area';
