@@ -113,7 +113,7 @@ class clean
 	}
 	public function reclean($output)
     {
-		return StripSlashes($output);	
+		return StripSlashes($output);
 	}
     public function clean_url($output)
     {

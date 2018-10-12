@@ -24,7 +24,7 @@ class Allconstants
 
 {
 
-    const _DB_NAME='framework';
+    const _DB_NAME='abdoun_cms';
 
     const _DB_SERVER='localhost';
 
