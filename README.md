@@ -262,3 +262,4 @@ Branch `en` is LTR and `ar` is RTL; the Arabic stylesheet overrides alignment, f
 - The application uses the deprecated `mysql_*` extension (PHP 5.6) and unescaped SQL in places; treat it as legacy code.
 - Files named `* - Copy.php`, `*_old.php` and `backup*.php` are historical copies kept in the tree.
 - `docker-compose.yml` mounts the working directory into `/var/www/html`, so template edits are live without rebuilding.
+- The admin **Sitemap** app writes `public_html/sitemap.xml`. URLs are built from the request host (including the port, e.g. `http://localhost:8085/`), without a forced `www.` prefix. The file must be writable by the Apache user.

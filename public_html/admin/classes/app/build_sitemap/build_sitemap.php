@@ -37,6 +37,20 @@ class build_sitemap
             return mysql_db::get_records_to_row("select id,title from content where parent=''");
         }
     }
+    protected function base_url()
+    {
+        $host=$_SERVER['HTTP_HOST'];
+        if($host==''){$host=$_SERVER['SERVER_NAME'];}
+        /* Do not force a www. prefix: it breaks local and bare domains. */
+        $host=preg_replace('/^www\./i','',$host);
+        $scheme=(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS']!='off')?'https':'http';
+        $port=(int)$_SERVER['SERVER_PORT'];
+        if($port && $port!=80 && $port!=443 && strpos($host,':')===false)
+        {
+            $host.=':'.$port;
+        }
+        return $scheme.'://'.$host.'/';
+    }
     protected function get_date($ddate='')
     {
         $arr=getdate($ddate);
@@ -60,7 +74,12 @@ class build_sitemap
         //$this->xml.='&lt;-- created with  marketing team www.-sy.com.com --&gt;';
         $this->map();
         $this->xml.='</urlset>';
-        $handle=fopen('../sitemap.xml','w');
+        $handle=@fopen('../sitemap.xml','w');
+        if(!$handle)
+        {
+            print('<br />Unable to write sitemap.xml - check file permissions.<br />');
+            return;
+        }
         fwrite($handle,$this->xml);
         fclose($handle);
         print('<br />شكراً تم توليد الملف: ');
@@ -99,7 +118,7 @@ class build_sitemap
 		      //$output_link=$output_link.'?id='.$resu01['id'].'&amp;type='.$resu01['type'].'&amp;l='.$resu01['language'].'&amp;page=content';
               $output_link=$output_link.''.$resu01['language'].'/'.$resu01['id'].'/'.$resu01['type'].'/content/0/'.$resu01['title'];
           }    		  
-          $this->xml.='<url><loc>http://www.'.$_SERVER['HTTP_HOST'].'/'.$output_link.'</loc></url>';    		  
+          $this->xml.='<url><loc>'.$this->base_url().$output_link.'</loc></url>';    		  
     	  $this->map($resu01['id'],$resu01['language']);
     	}
     }
