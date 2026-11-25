@@ -8,7 +8,7 @@ Dockerized CMS running on PHP 5.6, Apache 2, and MySQL 5.7.
 docker-compose up -d --build
 ```
 
-Open: http://localhost:8080
+Open: http://localhost:8085
 
 ## Services
 
