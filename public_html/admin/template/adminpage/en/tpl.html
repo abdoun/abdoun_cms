@@ -6,6 +6,7 @@
 
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title><admin_page_tag /></title>
 
@@ -69,11 +70,13 @@
 
     <div class="cleared reset-box"></div><div class="art-nav">
 
+	<button class="art-nav-toggle" type="button" aria-controls="art-nav-menu" aria-expanded="false">&#9776; Menu</button>
+
 	<div class="art-nav-l"></div>
 
 	<div class="art-nav-r"></div>
 
-<div class="art-nav-outer">
+<div class="art-nav-outer" id="art-nav-menu">
 
 <div class="art-nav-wrapper">
 
@@ -150,8 +153,34 @@
     </div>
 
 </div>
-
-
+<script type="text/javascript">
+/* Mobile navigation toggle - plain JS, independent of jQuery. */
+(function () {
+    var button = document.querySelector('.art-nav-toggle');
+    var menu = document.querySelector('.art-nav-outer');
+    if (!button || !menu) { return; }
+    button.addEventListener('click', function () {
+        var open = menu.classList.toggle('is-open');
+        button.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && menu.classList.contains('is-open')) {
+            menu.classList.remove('is-open');
+            button.setAttribute('aria-expanded', 'false');
+        }
+    });
+    /* Admin pages load over AJAX, so close the dropdown after a choice. */
+    var links = document.querySelector('.art-hmenu');
+    if (links) {
+        links.addEventListener('click', function (event) {
+            if (event.target.closest && event.target.closest('a')) {
+                menu.classList.remove('is-open');
+                button.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+})();
+</script>
 
 </body>
 

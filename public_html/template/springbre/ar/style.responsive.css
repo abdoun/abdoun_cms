@@ -66,6 +66,28 @@ div.art-header-jpeg {
     background-position: center center;
 }
 
+/* The banner fills the header; the original icon sits on top of it */
+div.art-header-jpeg .art-header-banner {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    padding: 0 !important;
+    object-fit: cover;
+}
+
+div.art-header-jpeg .art-header-icon {
+    position: absolute;
+    top: 0;
+    left: 12px;
+    width: auto;
+    height: 100%;
+    max-width: none;
+    padding: 10px !important;
+    box-sizing: border-box;
+    object-fit: contain;
+}
+
 /* ---------- 2. Content pinned to fixed widths by the block templates ----------
    These inline <style> blocks live in the page body, so they need
    !important to win over the equal-specificity rules defined there. */
@@ -199,10 +221,6 @@ table.art-article,
         height: 110px;
     }
 
-    div.art-header-jpeg img {
-        max-width: 90px;
-        padding: 8px !important;
-    }
 
     div.art-logo {
         top: 58px;
@@ -418,6 +436,11 @@ div.art-logo {
     margin-left: 0;
     margin-right: 12px;
     text-align: right;
+}
+
+div.art-header-jpeg .art-header-icon {
+    left: auto;
+    right: 12px;
 }
 
 .art-hmenu a .t {
