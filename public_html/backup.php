@@ -71,4 +71,7 @@ $html=str_replace('<description_tag />',$get_lang['description'][0].' - '._DESCR
 $modules[mysql_db]->close();
 $html=str_replace('EQUIV','',$html);
 $html=str_replace('refresh','',$html);
+// Privacy notice / cookie consent modal. Injected last so the inline CSS/JS
+// is not touched by the global "images" and "style." URL rewrites above.
+$html=str_replace('<privacy_tag />',privacy::view(),$html);
 echo($html);?>

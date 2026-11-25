@@ -256,8 +256,29 @@ Each admin app follows the same pattern: `config.php` (metadata/order), `<app>.p
 
 Branch `en` is LTR and `ar` is RTL; the Arabic stylesheet overrides alignment, floats and submenu borders. The admin area follows the same approach: `admin/template/adminpage/{en,ar}/tpl.html` plus the responsive rules appended to `style.css` (the copy at `admin/template/adminpage/style.css` is used on the first visit, before the language cookie is set). `admin/index.php` selects both the template and the assets from the session language, so switching language takes effect on the same request. Most admin apps have hardcoded Arabic UI strings; `admin/language/translations.en.php` maps those phrases to English and is applied by `admin/index.php` and `admin/main.php` when the English language is active. Content stored in the database (for example Arabic article titles) is left untouched. The English and first-visit stylesheets also override the original RTL-oriented text alignment so `l=en` renders left-aligned.
 
+## Privacy notice / cookie consent
+
+A bilingual privacy modal (English and Arabic) is injected through the
+`<privacy_tag />` placeholder at the end of both `template/springbre/{en,ar}/tpl.html`
+files. The notice is built by `classes/block/privacy/privacy.php` from the
+`_PRIVACY_*` constants in `language/{en,ar}.php`. It warns visitors **not to submit
+personal or private data through the site's forms because the CMS is legacy
+software**.
+
+- On first visit the overlay is shown; it is hidden by default, so browsers with
+  JavaScript disabled are unaffected.
+- Clicking **OK** stores `abdoun_privacy=1` in a browser cookie (one year, `path=/`,
+  `SameSite=Lax`) and hides the dialog.
+- A small **Privacy** / **الخصوصية** tab remains at the bottom corner so the notice
+  can be reopened at any time.
+- The replacement runs last in both `index.php` and `backup.php` so the global
+  `images` / `style.` URL rewrites do not touch the inline CSS and JavaScript.
+
 ## Notes
 
+- Despite `public_html/index.php` being the documented front controller,
+  `public_html/.htaccess` rewrites `index.php` to `backup.php`; the live site is
+  therefore served by `backup.php`. Keep shared changes in sync in both files.
 - PHP short open tags are enabled and required by the source files.
 - The application uses the deprecated `mysql_*` extension (PHP 5.6) and unescaped SQL in places; treat it as legacy code.
 - Files named `* - Copy.php`, `*_old.php` and `backup*.php` are historical copies kept in the tree.

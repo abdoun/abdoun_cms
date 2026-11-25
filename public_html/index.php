@@ -62,6 +62,9 @@ $html=uri::get_text_uri($html);
 $html=str_replace('<body_tag />',page::view($_GET[l]),$html);
 $html=str_replace('<title_tag />',$get_lang['sitename'][0].' - '._TITLE_PAGE,$html);
 $html=str_replace('<keywords_tag />',_KEYWORDS,$html);
-$html=str_replace('<description_tag />',_DESCRIPTION,$html);
+$html=str_replace('<description_tag />',_DESCRIPTION,$html);
+// Privacy notice / cookie consent modal. Injected last so the inline CSS/JS
+// is not touched by the global "images" and "style." URL rewrites above.
+$html=str_replace('<privacy_tag />',privacy::view(),$html);
 $modules[mysql_db]->close();
 echo($html);?>
