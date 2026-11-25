@@ -68,7 +68,7 @@ class user_area
 
                     <tr>
 
-                    	<td><h1 align="right">تحرير معلومات الحساب</h1></td>
+                    	<td><h1 align="'. _ALIGN .'">تحرير معلومات الحساب</h1></td>
 
                     	<td><a href="javascript://" onclick="_.get(\'main.php?page='.$this->get['page'].'&class='.$this->get['page'].'&event=signout&d=\'+new Date().getTime(), function(data) {_(\'#bTarTd\').html(data);});">تسجيل خروج</a></td>
 
@@ -200,7 +200,7 @@ class user_area
 
     {
 
-        print('<div style="text-align:right;">');
+        print('<div style="text-align:'. _ALIGN .';">');
 
         if(!empty($this->get[id]))
 
@@ -228,7 +228,7 @@ class user_area
 
         form::open_form('add_edit','main.php?page='.$this->get[page].'&class='.$this->get["class"].'&event=act','post',' id="add_edit"');
 
-        print('<table dir="rtl" align="right">');
+        print('<table dir="'. _DIR .'" align="'. _ALIGN .'">');
 
         print('<tr bgcolor="#cccccc"><td>'._USER.':<font color="#ff0000">*</font></td><td>');form::add_input('user','text','',$record[user][0],'disabled="disabled"');print('</td></tr>');
 

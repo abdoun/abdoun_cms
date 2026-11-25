@@ -1657,3 +1657,54 @@ div.art-header-jpeg {
         height: auto;
     }
 }
+
+/* ---------- LTR alignment for the English admin ---------- */
+.art-hmenu a,
+.art-hmenu a .t,
+.art-hmenu ul a,
+.art-hmenu ul a:link,
+.art-hmenu ul a:visited,
+.art-hmenu ul a:hover,
+.art-layout-cell,
+.art-content-layout-row,
+.art-article th,
+.art-article td,
+.art-postcontent,
+.art-blockcontent-body,
+.art-postheader,
+h2.art-postheader a,
+h2.art-postheader a:link,
+h2.art-postheader a:visited,
+#bTarTd table,
+#bTarTd td,
+#bTarTd th {
+    text-align: left;
+}
+
+.art-hmenu li {
+    float: left;
+}
+
+.art-hmenu ul {
+    left: 0;
+    right: auto;
+}
+
+/* Neutralise RTL presentational attributes left in the admin apps */
+#bTarTd [align="right"] {
+    text-align: left !important;
+}
+
+#bTarTd [dir="rtl"] {
+    direction: ltr !important;
+}
+
+#bTarTd [style*="text-align:right"] {
+    text-align: left !important;
+}
+
+#bTarTd table[align="right"] {
+    float: none !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+}

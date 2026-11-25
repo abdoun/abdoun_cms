@@ -36,5 +36,9 @@ if(empty($_GET['page']))
     $_GET['class']='user_area';
     $_GET['event']='signin';    
 }//print_r($_GET);
+ob_start();
 $obj=inclusion::construct_class_file_config('classes/app',$_GET['page'],$_GET,$_POST);
+$main_html=ob_get_clean();
+if(!empty($GLOBALS['_ADMIN_EN_TRANSLATIONS'])){$main_html=strtr($main_html,$GLOBALS['_ADMIN_EN_TRANSLATIONS']);}
+echo($main_html);
 $mysql_db->close();?>

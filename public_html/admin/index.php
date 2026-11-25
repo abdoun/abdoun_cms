@@ -40,6 +40,7 @@ $html=str_replace('script.js','template/adminpage/'.$admin_lang.'/script.js',$ht
 //$html=str_replace('<bTarTd_tag />',$main,$html);
 $html=str_replace('<dir_tag />',_DIR,$html);
 $html=str_replace('<align_tag />',_ALIGN,$html);
+if(!empty($GLOBALS['_ADMIN_EN_TRANSLATIONS'])){$html=strtr($html,$GLOBALS['_ADMIN_EN_TRANSLATIONS']);}
 echo($html);
 $mysql_db->exec_query("delete from content where title=''");
 $mysql_db->close();?>

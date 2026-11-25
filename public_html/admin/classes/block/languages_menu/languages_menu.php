@@ -15,7 +15,7 @@ class languages_menu
             if($files!="." && $files!=".." && $files!=".htaccess" && !is_dir("$fold/".$files))
             {
                 list($name,$ext)=explode('.',$files);
-                if($name!='index')
+                if($name!='index' && $name!='translations')
                 {
                     if($name==$_SESSION['l']){$selected='selected';}else{$selected='';}
                     $return.='<option value="'.$name.'" '.$selected.'>'.$name.'</option>';

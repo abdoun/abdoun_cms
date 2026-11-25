@@ -153,4 +153,8 @@ DEFINE('_RESULTS','results');
 DEFINE('_DONE','Registering has been completed succesfully');
 DEFINE('_F_P','Advertisements');
 DEFINE('_HEADER','<img src="images/header.jpg" width="1100" height="366" />');
+
+/* Hardcoded Arabic UI strings in the admin apps are translated when
+   rendering the English version of the admin area. */
+require_once(dirname(__FILE__).'/translations.en.php');
 ?>
