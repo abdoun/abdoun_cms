@@ -101,7 +101,7 @@ class contactus
                 return false;
             }
         </script>
-        <form method="post" action="http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?l=<?=$this->params[l];?>&page=contactus&type=contactus&event=act" id="contactus_us" name="contactus_us" onsubmit="return validate_(this);">
+        <form method="post" action="http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?l=<?=$this->params[l];?>&page=contactus&type=contactus&event=act" id="contactus_us" name="contactus_us" onsubmit="return validate_(this);">
         <table width='100%'>
           <tr>
             <td><?=_NAME ;?>:<font color="#ff0000" face="tahoma">*</font></td>
@@ -145,8 +145,8 @@ class contactus
 				<td><input align="middle" name="code" maxlength="8" size="20" type="text" onkeyup="this.value=this.value.toUpperCase();this.value=trim(this.value);" /></td>
 		  </tr>
           <tr>
-            <td><font face="Verdana" size="2" color="#000"><a href="http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>image.php" target="ifr" style="color: black;text-decoration: underline;"><?=_CHANGE." "._CODE;?></a></font></td>
-			<td><iframe name="ifr" id="ifr" src="http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>image.php" width="90" height="65" scrolling="no" frameborder="0" marginwidth="0"></iframe></td>
+            <td><font face="Verdana" size="2" color="#000"><a href="http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>image.php" target="ifr" style="color: black;text-decoration: underline;"><?=_CHANGE." "._CODE;?></a></font></td>
+			<td><iframe name="ifr" id="ifr" src="http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>image.php" width="90" height="65" scrolling="no" frameborder="0" marginwidth="0"></iframe></td>
    		  </tr>
           <tr>
             <td>

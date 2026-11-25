@@ -132,9 +132,9 @@ class controls
 
                     //alert('ok');
 
-                    _("#controls_result").html("<center><img src='http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>images/loading.gif' border='0'/></center>");
+                    _("#controls_result").html("<center><img src='http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>images/loading.gif' border='0'/></center>");
 
-                    _.post("<?='http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/controls/ajax.php?l=<?=$_GET['l'];?>&page=controls&type=controls&event=act&",
+                    _.post("<?='http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/controls/ajax.php?l=<?=$_GET['l'];?>&page=controls&type=controls&event=act&",
 
                      _("#controls_form").serialize(),
 
@@ -174,7 +174,7 @@ class controls
 
        $html=str_replace('<dir_tag />',_DIR,$html);
 
-       $html=str_replace('<directory_tag />','http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)),$html);
+       $html=str_replace('<directory_tag />','http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)),$html);
 
        $html=str_replace('<align_ />',_ALIGN_,$html);
 
@@ -248,7 +248,7 @@ class controls
 
             {
 
-                $content.='<div><a href="javascript:get(\'http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'classes/block/controls/ajax.php?l='.$_GET['l'].'&page=controls&type=controls&event=browse&id='.$id.'&\',\'comments\');"><b>'._VIEW.' '._COMMENTS.'</b></a></div>';
+                $content.='<div><a href="javascript:get(\'http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'classes/block/controls/ajax.php?l='.$_GET['l'].'&page=controls&type=controls&event=browse&id='.$id.'&\',\'comments\');"><b>'._VIEW.' '._COMMENTS.'</b></a></div>';
 
             }
 
@@ -290,9 +290,9 @@ class controls
 
         $content.='<tr>';
 
-        $content.='<td width="100"><font face="Verdana" size="2" color="#000"><a href="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'image.php" target="ifr">'._CHANGE.' '._CODE.'</a></font></td>';
+        $content.='<td width="100"><font face="Verdana" size="2" color="#000"><a href="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'image.php" target="ifr">'._CHANGE.' '._CODE.'</a></font></td>';
 
-		$content.='<td><iframe name="ifr" id="ifr" src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'image.php" width="90" height="65" scrolling="no" frameborder="0" marginwidth="0"></iframe></td>';
+		$content.='<td><iframe name="ifr" id="ifr" src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'image.php" width="90" height="65" scrolling="no" frameborder="0" marginwidth="0"></iframe></td>';
 
    		$content.='</tr>';
 
@@ -512,7 +512,7 @@ class controls
 
         print('<tr><td valign="top">'._ALL.': '.count($num['id']).'</td><td> &nbsp; </td><td>');
 
-        form::open_form('paging_form','http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'classes/block/controls/ajax.php?l='.$_GET['l'].'&page=controls&type=controls&event=browse&id='.$this->get['id'].'&page='.$this->get['page'].'&class='.$this->get['class'].'&','post',' id="paging_form" onsubmit="return false;"');
+        form::open_form('paging_form','http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'classes/block/controls/ajax.php?l='.$_GET['l'].'&page=controls&type=controls&event=browse&id='.$this->get['id'].'&page='.$this->get['page'].'&class='.$this->get['class'].'&','post',' id="paging_form" onsubmit="return false;"');
 
         //form::add_input('rec','text','',$this->post['rec'],' size="2" onkeypress="this.value=trim_zero(this.value);this.value=trim(this.value.toLowerCase());this.value=parseInt(this.value);if(this.value==\'NaN\' || isNaN(parseInt(this.value)))this.value=\'\';" onblur="this.value=trim(this.value.toLowerCase());this.value=parseInt(this.value);if(this.value==\'NaN\' || isNaN(parseInt(this.value)))this.value=\'\';if(this.value>0){results.innerHTML=\'\' + Math.round('.count($num['id']).'/this.value);}" onkeyup="this.value=trim(this.value.toLowerCase());this.value=parseInt(this.value);if(this.value==\'NaN\' || isNaN(parseInt(this.value)))this.value=\'\';"');
 

@@ -58,7 +58,7 @@ DEFINE('_PARTICIPATE_US','Subscribe');
 DEFINE('_NO_SEARCH','Sorry, you didn\'t enter the search word');
 DEFINE('_NEWS_LETTER','News Letter');
 define('_JOIN','Join our mailing list <span><a href="">Join us</a></span>');
-define('_FOOTER','CopyRight &copy; '.$_SERVER['SERVER_NAME'].' 2012');
+define('_FOOTER','CopyRight &copy; '.$_SERVER['HTTP_HOST'].' 2012');
 DEFINE('_PAGE','Page');
 DEFINE('_ARCHIVE','Archive');
 DEFINE('_SUBSCRIBE','Subscribe');

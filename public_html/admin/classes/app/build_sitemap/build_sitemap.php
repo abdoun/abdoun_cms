@@ -99,7 +99,7 @@ class build_sitemap
 		      //$output_link=$output_link.'?id='.$resu01['id'].'&amp;type='.$resu01['type'].'&amp;l='.$resu01['language'].'&amp;page=content';
               $output_link=$output_link.''.$resu01['language'].'/'.$resu01['id'].'/'.$resu01['type'].'/content/0/'.$resu01['title'];
           }    		  
-          $this->xml.='<url><loc>http://www.'.$_SERVER['SERVER_NAME'].'/'.$output_link.'</loc></url>';    		  
+          $this->xml.='<url><loc>http://www.'.$_SERVER['HTTP_HOST'].'/'.$output_link.'</loc></url>';    		  
     	  $this->map($resu01['id'],$resu01['language']);
     	}
     }

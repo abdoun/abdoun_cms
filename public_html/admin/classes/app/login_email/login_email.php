@@ -29,11 +29,11 @@ class login_email
     }
     protected function browse()
     {
-        //print('http://'.$_SERVER['SERVER_NAME'].'/webmail');
+        //print('http://'.$_SERVER['HTTP_HOST'].'/webmail');
         if(perm::check_login(array('manager','admin','supervisor')))
         {
             //print('<iframe frameborder="0" width="100%" height="800" src="https://rlc-damascus.com:2096/" id="email_iframe"></iframe>');
-            print('<iframe frameborder="0" width="100%" height="800" src="http://'.$_SERVER['SERVER_NAME'].'/webmail" id="email_iframe" name="email_iframe"
+            print('<iframe frameborder="0" width="100%" height="800" src="http://'.$_SERVER['HTTP_HOST'].'/webmail" id="email_iframe" name="email_iframe"
              onload=\'this.contentWindow.document.getElementById("user").value="'.$_SESSION['user'].'";
              this.contentWindow.document.getElementById("pass").value="'.$_SESSION['pass'].'";
              this.contentWindow.document.getElementById("login_form").submit();\'></iframe>');

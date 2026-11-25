@@ -137,7 +137,7 @@ class view_results
         foreach($res['id'] as $key=>$value)
         {
             if($key%1==0){$bgcolor='bgcolor="#C0C0C0"';}else{$bgcolor='bgcolor="#f0f0f0"';}
-            print('<tr '.$bgcolor.'><td>'.$value.'</td><td>'.$res['start_date'][$key].'</td><td>'.$this->get_members($res['member'][$key]).'</td><td>'.$this->get_members($res['spokesman'][$key]).'</td><td>'.$this->get_forms($res['forms'][$key]).'</td><td><a onclick="get(\'http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'classes/block/page/ajax.php?l='.$this->get['l'].'&page=view_results&type=view_results&event=view&id='.$value.'&\',\'tr'.$value.'\');" href="javascript://">'._MORE.'</a></td></tr>');
+            print('<tr '.$bgcolor.'><td>'.$value.'</td><td>'.$res['start_date'][$key].'</td><td>'.$this->get_members($res['member'][$key]).'</td><td>'.$this->get_members($res['spokesman'][$key]).'</td><td>'.$this->get_forms($res['forms'][$key]).'</td><td><a onclick="get(\'http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'classes/block/page/ajax.php?l='.$this->get['l'].'&page=view_results&type=view_results&event=view&id='.$value.'&\',\'tr'.$value.'\');" href="javascript://">'._MORE.'</a></td></tr>');
             print('<tr height="0" style="height:0;"><td height="0" style="height:0;" colspan="6" id="tr'.$value.'"></td></tr>');
         }
         print('</table></div>');

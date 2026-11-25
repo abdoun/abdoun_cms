@@ -26,11 +26,11 @@ class Allconstants
 
     const _DB_NAME='framework';
 
-    const _DB_SERVER='localhost';
+    const _DB_SERVER='db';
 
     const _DB_USERNAME='root';
 
-    const _DB_PASSWORD='';
+    const _DB_PASSWORD='root';
 
     
 

@@ -39,15 +39,15 @@ else
 **/
 //print(basename(__FILE__));
 define('_INDEX_PAGE',basename(__FILE__));
-define('_DEFAULT_TEMPLATE','http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'/template/springbre/'.$get_lang['shortcut'][0]);
+define('_DEFAULT_TEMPLATE','http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'/template/springbre/'.$get_lang['shortcut'][0]);
 $html=inclusion::get_include_file('template/springbre/'.$get_lang['shortcut'][0].'/tpl.html');
 $html=str_replace('<rss_tag />','rss.php?l='.$l.'',$html);
-$html=str_replace('<domain_tag />',$_SERVER['SERVER_NAME'],$html);
+$html=str_replace('<domain_tag />',$_SERVER['HTTP_HOST'],$html);
 require_once("language/".$get_lang['shortcut'][0].".php");
 //$html=str_replace('<javascript_tag />','<script type="text/javascript" src="js/scripts/javaScript.js"></script><script type="text/javascript" src="js/scripts/jscript.js"></script><script type="text/javascript" src="js/prototype.js"></script><script type="text/javascript" src="js/scriptaculous.js"></script><script type="text/javascript" src="js/lightview.js"></script><link rel="stylesheet" type="text/css" href="css/lightview.css" /><script src="js/scripts/jquery.js"></script>',$html);
-$html=str_replace('<javascript_tag />','<script type="text/javascript" src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'js/scripts/javaScript.js"></script><script type="text/javascript" src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'js/scripts/jscript.js"></script><script src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'js/scripts/jquery.js"></script><script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4fc556883592dacb"></script>',$html);
-//$html=str_replace('<script_tag />','<script src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'template/springbre/'.$get_lang['shortcut'][0].'/script.js"></script>',$html);
-if($_GET['type']=='image'){$html=str_replace('<javascript_proto />','<script type="text/javascript" src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'js/prototype.js"></script><script type="text/javascript" src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'js/scriptaculous.js"></script><script type="text/javascript" src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'js/lightview.js"></script><link rel="stylesheet" type="text/css" href="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'css/lightview.css" />',$html);}
+$html=str_replace('<javascript_tag />','<script type="text/javascript" src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'js/scripts/javaScript.js"></script><script type="text/javascript" src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'js/scripts/jscript.js"></script><script src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'js/scripts/jquery.js"></script><script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4fc556883592dacb"></script>',$html);
+//$html=str_replace('<script_tag />','<script src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'template/springbre/'.$get_lang['shortcut'][0].'/script.js"></script>',$html);
+if($_GET['type']=='image'){$html=str_replace('<javascript_proto />','<script type="text/javascript" src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'js/prototype.js"></script><script type="text/javascript" src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'js/scriptaculous.js"></script><script type="text/javascript" src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'js/lightview.js"></script><link rel="stylesheet" type="text/css" href="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'css/lightview.css" />',$html);}
 
 $html=str_replace('<shortcut_tag />',$get_lang['shortcut'][0],$html);
 //$html=str_replace('<javascript_tag />',js::script(),$html);
@@ -59,8 +59,8 @@ $html=str_replace('<cache_tage />',Allconstants::_CACHE,$html);
 //define('_TITLE_PAGE',$get_lang['sitename'][0]);
 //define('_KEYWORDS',$get_lang['keywords'][0]);
 //define('_DESCRIPTION',$get_lang['description'][0]);
-$html=str_replace('images','http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'template/springbre/'.$get_lang['shortcut'][0].'/images',$html);
-$html=str_replace('style.','http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'template/springbre/'.$get_lang['shortcut'][0].'/style.',$html);
+$html=str_replace('images','http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'template/springbre/'.$get_lang['shortcut'][0].'/images',$html);
+$html=str_replace('style.','http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'template/springbre/'.$get_lang['shortcut'][0].'/style.',$html);
 $html=str_replace('<right_tag />',side_menu::view($_GET[l]),$html);
 $html=str_replace('<body_tag />',page::view($_GET[l]),$html);
 //$html=str_replace('<body_tag />','<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box border_color="#AAAAAA" header="true" href="https://www.facebook.com/RLC.Damas" show_faces="true" stream="true" width="720" height="1000"></fb:like-box>',$html);

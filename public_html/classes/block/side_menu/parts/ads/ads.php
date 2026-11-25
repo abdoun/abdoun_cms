@@ -84,7 +84,7 @@ class ads
 
                 $content.='<a title="'.$res['title'][$i].' '.$res['descr'][$i].'"'.$selected.' id="li_'.$res[id][$i].'" href="'.$href.'?l='.$l.'&id='.$res['id'][$i].'&type='.$res['type'][$i].'&page=content&event='.$event.'&title='.clean::clean_url($res['title'][$i]).'">';
 
-                $content.='<img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'][$i].'" border="0" width="200" />';
+                $content.='<img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'][$i].'" border="0" width="200" />';
 
                 $content.='</a><br /><br />';
 
@@ -96,7 +96,7 @@ class ads
 
                 $content.='<a title="'.$res['title'][$i].' '.$res['descr'][$i].'"'.$selected.' id="li_'.$res[id][$i].'" href="'.$href.'?l='.$l.'&id='.$res['id'][$i].'&type='.$res['type'][$i].'&page=content&event='.$event.'&title='.clean::clean_url($res['title'][$i]).'">';
 
-                $content.='<img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'][$i].'" border="0" width="200" />';
+                $content.='<img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'][$i].'" border="0" width="200" />';
 
                 $content.='</a><br /><br />';
 

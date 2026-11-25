@@ -125,205 +125,205 @@ class news_map
 <div dir="ltr<?=_DIR;?>" style="padding: 5px;text-align: <?_ALIGN_?>;" id="news_div"></div>
 <script type="text/javascript">
 _('area').click(function(){
-    _('#news_div').html('<div style=\'width:30%;margin-right:auto;margin-left:auto;text-align:center\'><img src=\'http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>upload/ajax_loader_gray_64.gif\' border=\'0\'/></div>');
+    _('#news_div').html('<div style=\'width:30%;margin-right:auto;margin-left:auto;text-align:center\'><img src=\'http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>upload/ajax_loader_gray_64.gif\' border=\'0\'/></div>');
 });
 _('#daria').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=99&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=99&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#barzeh,#hamish').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=41&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=41&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#teshreen').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=42&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=42&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#qabun').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=43&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=43&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#jobar').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=44&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=44&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#masaken_barzeh').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=45&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=45&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#abujarash').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=46&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=46&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#tejarah').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=47&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=47&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#abbasyeen').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=48&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=48&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#adawi').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=49&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=49&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#rukn_addin').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=50&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=50&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#zablatani').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=51&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=51&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#qassaa').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=52&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=52&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#dwaila').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=53&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=53&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#faiha').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=54&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=54&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#baghdad').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=55&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=55&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#mazraa').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=56&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=56&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#salhyeh').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=57&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=57&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#misat').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=58&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=58&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#bab_assalam').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=59&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=59&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#qaimaryeh').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=60&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=60&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#touma').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=61&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=61&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#old_city').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=62&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=62&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#bustan_addour').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=63&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=63&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#qazzaz').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=64&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=64&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#senaa').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=65&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=65&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#shaghour').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=66&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=66&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#qanawat').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=67&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=67&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#mujtahed').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=68&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=68&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#muhajreen').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=69&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=69&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#telyani').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=70&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=70&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#malki').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=71&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=71&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#abu_rummaneh').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=72&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=72&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#salhyeh_gate').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=73&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=73&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#white_bridge').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=74&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=74&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#daf_shok').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=75&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=75&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#zahera').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=76&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=76&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#miedan').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=77&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=77&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#khaled_waleed').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=79&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=79&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#bab_sryjeh').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=80&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=80&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#sarouja').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=81&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=81&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#qabr_atka').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=82&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=82&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#fahameh').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=83&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=83&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#shalan').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=84&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=84&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#rawda').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=85&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=85&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#baramkeh').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=86&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=86&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#halbouni').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=87&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=87&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#kafarsouseh').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=88&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=88&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#mazzeh').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=89&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=89&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#aisheh').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=90&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=90&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#qadam').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=91&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=91&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#tadhamon').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=92&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=92&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#zouhour').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=93&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=93&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#black_stone').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=94&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=94&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#thirty_st').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=95&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=95&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#yarmouk').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=96&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=96&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#palestine').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=97&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=97&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#esaly').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=98&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=98&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#rabweh').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=100&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=100&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#projects_valley').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=101&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=101&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#dummar').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=102&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=102&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#dummar_project').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=103&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=103&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#qudsaya').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=104&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=104&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#qudsaya_suburb').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=105&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=105&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#hameh').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=106&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=106&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 _('#bab_sharqi').click(function(){
-    _.get('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=107&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
+    _.get('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?d='+new Date().getTime()+'&l=2&id=371&type=news&page=content&event=0&q_sec=&town=107&news_type=&_date_from=&_date_to=',function(data){_('#news_div').html(data);});    
 });
 </script>
 <?php

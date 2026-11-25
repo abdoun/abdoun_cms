@@ -48,7 +48,7 @@ if(!defined('_PHP_DOT_PRO') || _PHP_DOT_PRO!='ebdbf06090f7fcd532551060tfb9a5543'
     	background:#f2f2f2; 
     }
     #featured<?=$resu['id'][0];?> li.ui-tabs-selected{ 
-    	background:url('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/featured_content_slider/images_/selected-item.gif') top left no-repeat;  
+    	background:url('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/featured_content_slider/images_/selected-item.gif') top left no-repeat;  
     }
     #featured<?=$resu['id'][0];?> ul.ui-tabs-nav li.ui-tabs-selected a{ 
     	background:#ccc; 
@@ -61,7 +61,7 @@ if(!defined('_PHP_DOT_PRO') || _PHP_DOT_PRO!='ebdbf06090f7fcd532551060tfb9a5543'
     	position:absolute; 
     	top:180px; left:0; 
     	height:70px; width:400px;
-    	background: url('http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/featured_content_slider/images_/transparent-bg.png'); 
+    	background: url('http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/featured_content_slider/images_/transparent-bg.png'); 
     }
     #featured<?=$resu['id'][0];?> .info h2{ 
     	font-size:18px; font-family:Georgia, serif; 
@@ -86,7 +86,7 @@ if(!defined('_PHP_DOT_PRO') || _PHP_DOT_PRO!='ebdbf06090f7fcd532551060tfb9a5543'
 -->
 </style>
 <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" ></script>-->
-<script type="text/javascript" src="http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/featured_content_slider/jquery-ui.min.js" ></script>
+<script type="text/javascript" src="http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/featured_content_slider/jquery-ui.min.js" ></script>
 <script type="text/javascript">
 	_(document).ready(function(){
 		_("#featured<?=$resu['id'][0];?> > ul").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 5000, true);
@@ -125,10 +125,10 @@ if(!defined('_PHP_DOT_PRO') || _PHP_DOT_PRO!='ebdbf06090f7fcd532551060tfb9a5543'
                     }
                 }?>
         	    <div id="fragment-<?=$res['id'][$i];?>_<?=$resu['id'][0];?>" class="ui-tabs-panel" style="">
-        			<img src="http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>upload/<?=$res['icon'][$i];?>" width="385" height="237" alt="<?=$res['title'][$i];?>" />
+        			<img src="http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>upload/<?=$res['icon'][$i];?>" width="385" height="237" alt="<?=$res['title'][$i];?>" />
         			 <div class="info" >
-        				<h2><a href="http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>?l=<?=$res['language'][$i];?>&id=<?=$res['id'][$i];?>&type=<?=$this->params['type'];?>&page=<?=$this->params['page'];?>&event=view&title=<?=clean::clean_url($res['title'][$i]);?>" ><?=$res['title'][$i];?></a></h2>
-        				<p><?=$res['descr'][$i];?> <a href="http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>?l=<?=$res['language'][$i];?>&id=<?=$res['id'][$i];?>&type=<?=$this->params['type'];?>&page=<?=$this->params['page'];?>&event=<?=$event;?>&title=<?=clean::clean_url($res['title'][$i]);?>" ><?=_MORE;?>...</a></p>
+        				<h2><a href="http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>?l=<?=$res['language'][$i];?>&id=<?=$res['id'][$i];?>&type=<?=$this->params['type'];?>&page=<?=$this->params['page'];?>&event=view&title=<?=clean::clean_url($res['title'][$i]);?>" ><?=$res['title'][$i];?></a></h2>
+        				<p><?=$res['descr'][$i];?> <a href="http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>?l=<?=$res['language'][$i];?>&id=<?=$res['id'][$i];?>&type=<?=$this->params['type'];?>&page=<?=$this->params['page'];?>&event=<?=$event;?>&title=<?=clean::clean_url($res['title'][$i]);?>" ><?=_MORE;?>...</a></p>
         			 </div>
         	    </div>
             <?}

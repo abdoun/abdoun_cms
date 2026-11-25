@@ -78,7 +78,7 @@ class vote
 
        {
 
-           echo '<form action="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'classes/block/side_menu/ajax.php?l='.$l.'&page=vote&type=vote&event=act&" method="post" name="vote_form" id="vote_form" onsubmit="post(\'vote_form\',\'vote_result\');return false;">';
+           echo '<form action="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'classes/block/side_menu/ajax.php?l='.$l.'&page=vote&type=vote&event=act&" method="post" name="vote_form" id="vote_form" onsubmit="post(\'vote_form\',\'vote_result\');return false;">';
 
            echo '<input type="hidden" name="voters" value="'.$res['voters'][0].'" /><input type="hidden" name="answerr" value="vo2" /><input type="hidden" name="id" value="'.$res['id'][0].'" />'.$res['question'][0].'<br />';
 
@@ -150,7 +150,7 @@ class vote
 
            }
 
-           echo '<br /><span id="res_button"><div class="button" id="result" title="'._RESULTS.'" onclick="javascript:get(\'http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'classes/block/side_menu/ajax.php?l='.$l.'&page=vote&type=vote&event=result&id='.$res['id'][0].'&\',\'vote_result\');">'._RESULTS.'</div></span>';
+           echo '<br /><span id="res_button"><div class="button" id="result" title="'._RESULTS.'" onclick="javascript:get(\'http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'classes/block/side_menu/ajax.php?l='.$l.'&page=vote&type=vote&event=result&id='.$res['id'][0].'&\',\'vote_result\');">'._RESULTS.'</div></span>';
 
            echo '<span id="submitt"><div class="button" id="submitt" title="'._VOTE.'" onclick="post(\'vote_form\',\'vote_result\');return false;">'._VOTE.'</div></span>';
 
@@ -237,9 +237,9 @@ class vote
 
                 $tag=false;
 
-                print('<br /><span id="res_button"><div class="button" class="button" id="result" title="'._RESULTS.'" onclick="javascript:get(\'classes/block/side_menu/ajax.php?l='.$this->get['l'].'&page=vote&type=vote&event=result&id='.$this->get['id'][0].'&\',\'vote_result\');">'._RESULTS.'</div></span>');
+                print('<br /><span id="res_button"><div class="button" class="button" id="result" title="'._RESULTS.'" onclick="javascript:get(\'http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'classes/block/side_menu/ajax.php?l='.$this->get['l'].'&page=vote&type=vote&event=result&id='.$this->get['id'][0].'&\',\'vote_result\');">'._RESULTS.'</div></span>');
 
-                print('<span id="submitt"><div class="button" class="button" id="to_vote" title="'._VOTE.'" onclick="javascript:get(\'classes/block/side_menu/ajax.php?l='.$this->get['l'].'&page=vote&type=vote&\',\'vote_result\');">'._VOTE.'</div></span>');
+                print('<span id="submitt"><div class="button" class="button" id="to_vote" title="'._VOTE.'" onclick="javascript:get(\'http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'classes/block/side_menu/ajax.php?l='.$this->get['l'].'&page=vote&type=vote&\',\'vote_result\');">'._VOTE.'</div></span>');
 
                 print('<div id="down_vote">&nbsp;</div>');
 
@@ -253,9 +253,9 @@ class vote
 
                 $tag=false;
 
-                print('<br /><span id="res_button"><div class="button" class="button" id="result" title="'._RESULTS.'" onclick="javascript:get(\'classes/block/side_menu/ajax.php?l='.$this->get['l'].'&page=vote&type=vote&event=result&id='.$this->get['id'][0].'&\',\'vote_result\');">'._RESULTS.'</div></span>');
+                print('<br /><span id="res_button"><div class="button" class="button" id="result" title="'._RESULTS.'" onclick="javascript:get(\'http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'classes/block/side_menu/ajax.php?l='.$this->get['l'].'&page=vote&type=vote&event=result&id='.$this->get['id'][0].'&\',\'vote_result\');">'._RESULTS.'</div></span>');
 
-                print('<span id="submitt"><div class="button" class="button" id="to_vote" title="'._VOTE.'" onclick="javascript:get(\'classes/block/side_menu/ajax.php?l='.$this->get['l'].'&page=vote&type=vote&\',\'vote_result\');">'._VOTE.'</div></span>');
+                print('<span id="submitt"><div class="button" class="button" id="to_vote" title="'._VOTE.'" onclick="javascript:get(\'http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'classes/block/side_menu/ajax.php?l='.$this->get['l'].'&page=vote&type=vote&\',\'vote_result\');">'._VOTE.'</div></span>');
 
                 print('<div id="down_vote">&nbsp;</div>');
 
@@ -273,9 +273,9 @@ class vote
 
                 $tag=false;
 
-                print('<br /><span id="res_button"><div class="button" class="button" id="result" title="'._RESULTS.'" onclick="javascript:get(\'classes/block/side_menu/ajax.php?l='.$this->get['l'].'&page=vote&type=vote&event=result&id='.$this->get['id'][0].'&\',\'vote_result\');">'._RESULTS.'</div></span>');
+                print('<br /><span id="res_button"><div class="button" class="button" id="result" title="'._RESULTS.'" onclick="javascript:get(\'http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'classes/block/side_menu/ajax.php?l='.$this->get['l'].'&page=vote&type=vote&event=result&id='.$this->get['id'][0].'&\',\'vote_result\');">'._RESULTS.'</div></span>');
 
-                print('<span id="submitt"><div class="button" class="button" id="to_vote" title="'._VOTE.'" onclick="javascript:get(\'classes/block/side_menu/ajax.php?l='.$this->get['l'].'&page=vote&type=vote&\',\'vote_result\');">'._VOTE.'</div></span>');
+                print('<span id="submitt"><div class="button" class="button" id="to_vote" title="'._VOTE.'" onclick="javascript:get(\'http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'classes/block/side_menu/ajax.php?l='.$this->get['l'].'&page=vote&type=vote&\',\'vote_result\');">'._VOTE.'</div></span>');
 
                 print('<div id="down_vote">&nbsp;</div>');
 
@@ -381,7 +381,7 @@ class vote
 
            print('</table>');
 
-           print('<span id="submitt"><div class="button" class="button" id="to_vote" title="'._VOTE.'" onclick="javascript:get(\'classes/block/side_menu/ajax.php?l='.$this->get['l'].'&page=vote&type=vote&\',\'vote_result\');">'._VOTE.'</div></span>');
+           print('<span id="submitt"><div class="button" class="button" id="to_vote" title="'._VOTE.'" onclick="javascript:get(\'http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'classes/block/side_menu/ajax.php?l='.$this->get['l'].'&page=vote&type=vote&\',\'vote_result\');">'._VOTE.'</div></span>');
 
            print('<div id="down_vote">&nbsp;</div>');
 

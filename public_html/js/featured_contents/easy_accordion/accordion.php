@@ -7,7 +7,7 @@ if(!defined('_PHP_DOT_PRO') || _PHP_DOT_PRO!='ebdbf06090f7fcd532551060tfb9a5543'
  **/
  //print_r($resu);?><!-- Scripts -->
       <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>-->
-	  <script type="text/javascript" src="http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/easy_accordion/scripts/jquery.easyAccordion.js"></script>
+	  <script type="text/javascript" src="http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/easy_accordion/scripts/jquery.easyAccordion.js"></script>
       <script type="text/javascript">
       _(document).ready(function () {
           _('#accordion-<?=$resu['id'][0];?>').easyAccordion({ 
@@ -108,7 +108,7 @@ if(!defined('_PHP_DOT_PRO') || _PHP_DOT_PRO!='ebdbf06090f7fcd532551060tfb9a5543'
                         if(!empty($res['_file'][$i])){if(strpos($res['_file'][$i],'.')===false){$_file=' <span style="background-color:#ccc">'.$res[_file][$i].'</span> ';}else{$_file='';}}else{$_file='';}
                         print('<dt>'.$res[title][$i].'</dt>');
                         ?><dd><?
-                        if(!empty($res['icon'][$i])){$img='<img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'][$i].'" width="100" align="'._ALIGN.'" />';}
+                        if(!empty($res['icon'][$i])){$img='<img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'][$i].'" width="100" align="'._ALIGN.'" />';}
                         print('<table width="100%" border="0" dir="'._DIR.'">
                         <tr style="font-size:14px;font-family:tahoma;"><td dir="'._DIR.'"><b>'.$res[title][$i].'</b></td><td dir="'._DIR.'"><span style="background-color:#ccc">'.$res[_author][$i].'</span>'.$_file.'</td><td dir="'._DIR.'"><span style="background-color:#ccc">'.$res[_date][$i].'</span></td></tr>
                         <tr><td style="font-size:11px;font-family:tahoma;vertical-align:top;" colspan="3">'.$img.'<br /><em>'.$res['descr'][$i].'</em> <div class="more"><a href="?l='.$res['language'][$i].'&id='.$res['id'][$i].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event='.$event.'&title='.clean::clean_url($res['title'][$i]).'" style="color:#11a8e7;font-size:11px;">'._MORE.'...</a></td></tr>

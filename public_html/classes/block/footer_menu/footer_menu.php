@@ -39,7 +39,7 @@ class footer_menu
        $html=str_replace('<tag />',$content,$html);
        //$html=str_replace('<tag />',_FOOTER,$html);
        $html=str_replace('<tag_copyright />',_FOOTER,$html);
-       $html=str_replace('<rss_tag />','http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'rss.php?l='.$l.'',$html);
+       $html=str_replace('<rss_tag />','http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'rss.php?l='.$l.'',$html);
        //$html=str_replace('<tag />','',$html);
 	   return $html;
 	}

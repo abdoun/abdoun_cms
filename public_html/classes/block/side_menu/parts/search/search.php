@@ -52,7 +52,7 @@ class search
        $html=self::template_include();
        $html=str_replace('<dir_tag />',_DIR,$html);
        $html=str_replace('<title_ />',_SEARCH,$html);
-       $content='<div id="form"><form action="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'" method="get" name="search_form" id="search_form" onsubmit="if(this.q.value==\'\'){alert(\''.addslashes(_NO_SEARCH).'\');this.q.focus();return false;}">';
+       $content='<div id="form"><form action="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'" method="get" name="search_form" id="search_form" onsubmit="if(this.q.value==\'\'){alert(\''.addslashes(_NO_SEARCH).'\');this.q.focus();return false;}">';
        //$content.='<input type="hidden" name="search" title="'._SEARCH.'" value="q" size="10" />';
        $content.='<input type="text" name="q" title="'._SEARCH.'" value="'.$_GET['q'].'" size="10" />';
        $content.='<input type="hidden" name="l" value="'.$_GET['l'].'" />';

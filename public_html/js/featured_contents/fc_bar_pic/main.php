@@ -40,7 +40,7 @@ print('<span>'.$resu['descr'][0].'</span>');?><div class="transbox" style="width
         			<div style="position: absolute; right: 0px; top: 0px; width: 690px; height: 83px; z-index: 111111;">
                 		<div dir="rtl" style="padding: 10px; color: rgb(255, 255, 255); font: 11px/18px tahoma;" align="<?=_ALIGN;?>">
                 			<span id="lblTitle<?=$resu['id'][0];?>"></span><br /><span id="lblDescr<?=$resu['id'][0];?>"></span> 
-                			<span id="lblMore<?=$resu['id'][0];?>"><a  href="http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>" style="text-decoration: none; color:#3F84AB;font-size: 12px;"><?=_SHOW;?></a></span>
+                			<span id="lblMore<?=$resu['id'][0];?>"><a  href="http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>" style="text-decoration: none; color:#3F84AB;font-size: 12px;"><?=_SHOW;?></a></span>
           				</div>
 					</div>
 					<div style="filter:alpha(opacity=50);opacity: 0.5; position: absolute; right: 0px; top: 0px; width: 690px; height: 83px; background: none repeat scroll 0% 0% rgb(0, 0, 0);"></div>
@@ -74,7 +74,7 @@ print('<span>'.$resu['descr'][0].'</span>');?><div class="transbox" style="width
                     $arr[$i]['link']=' <a  href="?l='.$res['language'][$i].'&id='.$res['id'][$i].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event='.$event.'&title='.clean::clean_url($res['title'][$i]).'" style=color:#000>'.$res['title'][$i].'</a> ';
                     $arr[$i]['title']=$res['title'][$i];
                 	?><script type="text/javascript">
-                    arr<?=$resu['id'][0];?>[<?=$i;?>]='<a  href="<?print('?l='.$res['language'][$i].'&id='.$res['id'][$i].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event='.$event.'&title='.clean::clean_url($res['title'][$i]));?>"><img style="margin: 0px;" src="http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>upload/<?=$res[icon][$i];?>" width="690" height="223" border="0" /></a>';
+                    arr<?=$resu['id'][0];?>[<?=$i;?>]='<a  href="<?print('?l='.$res['language'][$i].'&id='.$res['id'][$i].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event='.$event.'&title='.clean::clean_url($res['title'][$i]));?>"><img style="margin: 0px;" src="http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>upload/<?=$res[icon][$i];?>" width="690" height="223" border="0" /></a>';
                     link<?=$resu['id'][0];?>[<?=$i;?>]='<?php print('?l='.$res['language'][$i].'&id='.$res['id'][$i].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event='.$event.'&title='.clean::clean_url($res['title'][$i]));?>';
                     title<?=$resu['id'][0];?>[<?=$i;?>]='<b><?php print(clean::burn($res['title'][$i].' '.$_file.' '.$res['_author'][$i]));?></b>';
                     descr<?=$resu['id'][0];?>[<?=$i;?>]='<span><?php print($res['descr'][$i]);?></span> ';
@@ -94,7 +94,7 @@ print('<span>'.$resu['descr'][0].'</span>');?><div class="transbox" style="width
                 _("#lblDescr<?=$resu['id'][0];?>").html(descr<?=$resu['id'][0];?>[i]);
                 _("#lblMore<?=$resu['id'][0];?> a").attr('href',link<?=$resu['id'][0];?>[i]);
             	_("#imgg<?=$resu['id'][0];?>").fadeIn('slow');
-                _("#icon<?=$resu['id'][0];?>" + i + "").attr('src','http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>template/beanpod/ar/images/footer_t.png');
+                _("#icon<?=$resu['id'][0];?>" + i + "").attr('src','http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>template/beanpod/ar/images/footer_t.png');
              	setTimeout(function(){
             		_("#tiii<?=$resu['id'][0];?>").animate({"top":"120px"});
             	}, 1000);
@@ -103,7 +103,7 @@ print('<span>'.$resu['descr'][0].'</span>');?><div class="transbox" style="width
                     
                 }, 4000);
                 timeout=setTimeout(function(){
-                    _("#icon<?=$resu['id'][0];?>" + i + "").attr('src','http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>template/beanpod/ar/images/sheet_s.png');
+                    _("#icon<?=$resu['id'][0];?>" + i + "").attr('src','http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>template/beanpod/ar/images/sheet_s.png');
                     i++;
                     animater<?=$resu['id'][0];?>(i);
             	}, 5000);
@@ -111,12 +111,12 @@ print('<span>'.$resu['descr'][0].'</span>');?><div class="transbox" style="width
             animater<?=$resu['id'][0];?>(0);
             <?for($j=0;$j<count($res['id']);$j++)
             {
-                ?>_("#icon<?=$resu['id'][0];?><?=$j;?>").click(function(){_(".icon<?=$resu['id'][0];?>").attr('src','http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>template/beanpod/ar/images/sheet_s.png');clearTimeout(timeout);animater<?=$resu['id'][0];?>(<?=$j;?>);});<?
+                ?>_("#icon<?=$resu['id'][0];?><?=$j;?>").click(function(){_(".icon<?=$resu['id'][0];?>").attr('src','http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>template/beanpod/ar/images/sheet_s.png');clearTimeout(timeout);animater<?=$resu['id'][0];?>(<?=$j;?>);});<?
             }?>
             });
         </script></div><div style="height: 7px;font-size: 7px;"> </div><?php
         foreach($arr as $key=>$value)
         {
-            ?><span title="<?=$arr[$key][title];?>" style="cursor: pointer;"><img class="icon<?=$resu['id'][0];?>" id="icon<?=$resu['id'][0];?><?=$key;?>" src="http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>template/beanpod/ar/images/sheet_s.png" width="20" height="20" border="0" /></span><?
+            ?><span title="<?=$arr[$key][title];?>" style="cursor: pointer;"><img class="icon<?=$resu['id'][0];?>" id="icon<?=$resu['id'][0];?><?=$key;?>" src="http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>template/beanpod/ar/images/sheet_s.png" width="20" height="20" border="0" /></span><?
         }
         ?></div></div></div>

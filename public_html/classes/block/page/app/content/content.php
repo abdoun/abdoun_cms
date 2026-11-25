@@ -97,7 +97,7 @@ class content
       {// style='color:#005d83;font-size:16px;font-weight:bold;'
     	//$title_[].="<a  href='page_".$l."_".$res['id']."_".$res['type']."_".$this->params['page']."_".$this->params['brand']."_0_".clean::clean_url($res[title])."'>$res[title]</a> >";
         //$title_[].="<a  href='?l=".$l."&id=".$res['id']."&type=".$res['type']."&page=".$this->params['page']."&event=0&title=".clean::clean_url($res[title])."'>$res[title]</a> >";
-        $title_[].="<a  href='http://".$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE))."".$l."/".$res['id']."/".$res['type']."/".$this->params['page']."/0/".clean::clean_url($res[title])."'>$res[title]</a> >";
+        $title_[].="<a  href='http://".$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE))."".$l."/".$res['id']."/".$res['type']."/".$this->params['page']."/0/".clean::clean_url($res[title])."'>$res[title]</a> >";
       }
       
       if($res[parent]!='')
@@ -163,11 +163,11 @@ class content
         {
             if($res['permission']==1 || ($res['permission']==2 && $_SESSION['username']!='' && membership::content_member($res['id'])))
             {
-                $img=getimagesize('http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon']);
+                $img=getimagesize('http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon']);
                 //print_r($img);
                 if($img[0]>200){$img[0]='200';}
                 print('<td align="center" width="33%"><center>');
-                $item='<a title="'.$res['descr'].'" href="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'?l='.$res['language'].'&id='.$res['id'].'&type='.$res['type'].'&page='.$this->params['page'].'&event=browse&title='.clean::clean_url($res['title']).'" style="color:#19A9E4;font-weight: bold;"><img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'].'" width="'.$img[0].'" align="top" border="0" alt="'.$res['descr'].'" title="'.$res['descr'].'" /></a>';
+                $item='<a title="'.$res['descr'].'" href="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'?l='.$res['language'].'&id='.$res['id'].'&type='.$res['type'].'&page='.$this->params['page'].'&event=browse&title='.clean::clean_url($res['title']).'" style="color:#19A9E4;font-weight: bold;"><img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'].'" width="'.$img[0].'" align="top" border="0" alt="'.$res['descr'].'" title="'.$res['descr'].'" /></a>';
                 echo str_replace('<title_ />','<b>'.$res['title'].'</b>',str_replace('<tag />',$item,$box));
                 print('</center></td>');
                 if($i%3==0){print('</tr><tr>');}
@@ -306,7 +306,7 @@ class body extends content
         {
             $share='<br /><!-- AddThis Button BEGIN -->
                     <div class="addthis_toolbox addthis_default_style "
-                    addthis:url="http:'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'/?l='.$this->params['l'].'&id='.$res['id'][0].'&type='.$res['type'][0].'&page='.$this->params['page'][0].'&event=0&title='.clean::clean_url($res[title][0]).'"
+                    addthis:url="http:'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'/?l='.$this->params['l'].'&id='.$res['id'][0].'&type='.$res['type'][0].'&page='.$this->params['page'][0].'&event=0&title='.clean::clean_url($res[title][0]).'"
                     addthis:title="'.$res['title'][0].'"
                     addthis:description="'.$res['descr'][0].'">
                     <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -353,7 +353,7 @@ class image extends content
         {
             $share='<tr><td colspan="3"><!-- AddThis Button BEGIN -->
                     <div class="addthis_toolbox addthis_default_style "
-                    addthis:url="http:'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'/?l='.$this->params['l'].'&id='.$res['id'][0].'&type='.$res['type'][0].'&page='.$this->params['page'][0].'&event=0&title='.clean::clean_url($res[title][0]).'"
+                    addthis:url="http:'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'/?l='.$this->params['l'].'&id='.$res['id'][0].'&type='.$res['type'][0].'&page='.$this->params['page'][0].'&event=0&title='.clean::clean_url($res[title][0]).'"
                     addthis:title="'.$res['title'][0].'"
                     addthis:description="'.$res['descr'][0].'">
                     <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -530,9 +530,9 @@ class vedio extends content
         else
         {
             print('<span style="float: '._ALIGN_.';">');
-            print('<a  href="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'rss.php?l='.$this->params['l'].'&id='.$resu[id][0].'"><img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'images/rssicon.png" align="'._ALIGN_.'" height="20" title="rss" alt="RSS" border="0" /></a>');
+            print('<a  href="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'rss.php?l='.$this->params['l'].'&id='.$resu[id][0].'"><img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'images/rssicon.png" align="'._ALIGN_.'" height="20" title="rss" alt="RSS" border="0" /></a>');
             form::add_input('q_sec','text','',$this->params['q_sec'],'id="q_sec"');
-            form::add_input('req','button','',_SEARCH,'onclick="location.href=\'http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'?l='.$this->params['l'].'&id='.$resu['id'][0].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event=0&title='.urlencode($this->params['title']).'&q_sec=\' + getElementById(\'q_sec\').value;"');
+            form::add_input('req','button','',_SEARCH,'onclick="location.href=\'http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'?l='.$this->params['l'].'&id='.$resu['id'][0].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event=0&title='.urlencode($this->params['title']).'&q_sec=\' + getElementById(\'q_sec\').value;"');
             print('</span>');
             print(' <span>'.$resu[descr][0].'</span>');
             //print('<table width="90%"><tr>');
@@ -540,11 +540,11 @@ class vedio extends content
             {
                 if($res['permission'][$i]==1 || ($res['permission'][$i]==2 && $_SESSION['username']!='' && membership::content_member($res['id'][$i])))
                 {
-                    $img=getimagesize('http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'][$i]);
+                    $img=getimagesize('http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'][$i]);
                     if($img[0]>280){$img[0]='180';}
                     //print('<td align="center"><a  href="page_'.$res['language'].'_'.$res['id'].'_'.$this->params['type'].'_'.$this->params['page'].'_'.$this->params['brand'].'_view_'.clean::clean_url($res['title']).'">'.$res['title'].'<br /><img src="upload/'.$res['icon'].'" width="'.$img[0].'" align="top" border="0" /></a><br /><br /></td>');
                     ///print('<td align="center"><a  href="?l='.$res['language'].'&id='.$res['id'].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event=view&title='.clean::clean_url($res['title']).'">'.$res['title'].'<br /><img src="upload/'.$res['icon'].'" width="'.$img[0].'" align="top" border="0" /></a><br /><br /></td>');
-                    block_::box_border('<table width="100%" border="0"><tr><td dir="'._DIR.'" style="vertical-align:top;"><img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res[icon][$i].'" width="'.$img[0].'" title="'.$res[title][$i].'" /></td><td style="font-size:11px;height:80px;vertical-align:top;" width="70%"><font size="2"><b>'.$res[title][$i].'</b></font><br /><span>'.$res['descr'][$i].'</span></td><td style="vertical-align:bottom;"><div class="more"><a  href="?l='.$res['language'][$i].'&id='.$res['id'][$i].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event=view&title='.clean::clean_url($res['title'][$i]).'" style="color:#11a8e7;font-size:11px;">'._MORE.'...</a></td></tr></table>','#ffffff','100%',' valign="middle"');
+                    block_::box_border('<table width="100%" border="0"><tr><td dir="'._DIR.'" style="vertical-align:top;"><img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res[icon][$i].'" width="'.$img[0].'" title="'.$res[title][$i].'" /></td><td style="font-size:11px;height:80px;vertical-align:top;" width="70%"><font size="2"><b>'.$res[title][$i].'</b></font><br /><span>'.$res['descr'][$i].'</span></td><td style="vertical-align:bottom;"><div class="more"><a  href="?l='.$res['language'][$i].'&id='.$res['id'][$i].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event=view&title='.clean::clean_url($res['title'][$i]).'" style="color:#11a8e7;font-size:11px;">'._MORE.'...</a></td></tr></table>','#ffffff','100%',' valign="middle"');
                     print('<br />');
                     //if($i%3==0){print('</tr><tr>');}
                 }
@@ -556,7 +556,7 @@ class vedio extends content
                 {
                     $pages[$j]=$j;
                 }
-                form::add_select('rec',$pages,$this->params['rec'],'',_PAGE,'onchange="location.href=\'http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'?l='.$this->params['l'].'&id='.$this->params['id'].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event='.$this->params['event'].'&title='.$this->params['title'].'&rec=\' + this.value;"');
+                form::add_select('rec',$pages,$this->params['rec'],'',_PAGE,'onchange="location.href=\'http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'?l='.$this->params['l'].'&id='.$this->params['id'].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event='.$this->params['event'].'&title='.$this->params['title'].'&rec=\' + this.value;"');
             }
         }
         $content = ob_get_contents();
@@ -588,7 +588,7 @@ class vedio extends content
         {
             $share='<tr><td colspan="3"><!-- AddThis Button BEGIN -->
                     <div class="addthis_toolbox addthis_default_style "
-                    addthis:url="http:'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'/?l='.$this->params['l'].'&id='.$res['id'][0].'&type='.$res['type'][0].'&page='.$this->params['page'][0].'&event=0&title='.clean::clean_url($res[title][0]).'"
+                    addthis:url="http:'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'/?l='.$this->params['l'].'&id='.$res['id'][0].'&type='.$res['type'][0].'&page='.$this->params['page'][0].'&event=0&title='.clean::clean_url($res[title][0]).'"
                     addthis:title="'.$res['title'][0].'"
                     addthis:description="'.$res['descr'][0].'">
                     <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -1002,7 +1002,7 @@ class news extends content
                             }
                         }
                         if(!empty($res['_file'][$i])){if(strpos($res['_file'][$i],'.')===false){$_file=' <span style="color:#969696;">'.$res[_file][$i].'</span> ';}else{$_file='';}}else{$_file='';}
-                        if(!empty($res['icon'][$i])){$img='<img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'][$i].'" width="90" align="'._ALIGN.'" />';}
+                        if(!empty($res['icon'][$i])){$img='<img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'][$i].'" width="90" align="'._ALIGN.'" />';}
                         print('<td dir="'._DIR.'" style="font-family: tahoma;font-size:13px;vertical-align:top;" width="400" valign="top">'.$img.'<b>'.$res[title][$i].'</b><br /><br /><span style="color:#808080">'.$res[_author][$i].'</span>'.$_file.'<br /><br /><span style="color:#808080;">'.$res[_date][$i].'</span><br /><br /><span style="font-size:12px;">'.$res['descr'][$i].'</span> <div class="more"><a  href="?l='.$res['language'][$i].'&id='.$res['id'][$i].'&type='.$resu['type'][0].'&page='.$this->params['page'].'&event='.$event.'&title='.clean::clean_url($res['title'][$i]).'" style="color:#8E0707;font-size:14px;">'._MORE.'...</a><br /><br />'.$this->share($res,$i).'<br /><hr style="background-color: #ccc;height: 1px;" height="1" color="#cccccc" /></td><td>&nbsp;</td>');
                         if($u%2==0){print('</tr><tr>');}
                         $u++;
@@ -1015,7 +1015,7 @@ class news extends content
                     {
                         $pages[$j]=$j;
                     }
-                    form::add_select('rec',$pages,$this->params['rec'],'',_PAGE,'onchange="location.href=\'http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'?l='.$this->params['l'].'&id='.$this->params['id'].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event='.$this->params['event'].'&title='.$this->params['title'].'&q_sec='.$this->params['q_sec'].'&rec=\' + this.value + \'&town='.$this->params['town'].'&news_type='.$this->params['news_type'].'&_date_from='.$this->params['_date_from'].'&_date_to='.$this->params['_date_to'].'\';"');
+                    form::add_select('rec',$pages,$this->params['rec'],'',_PAGE,'onchange="location.href=\'http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'?l='.$this->params['l'].'&id='.$this->params['id'].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event='.$this->params['event'].'&title='.$this->params['title'].'&q_sec='.$this->params['q_sec'].'&rec=\' + this.value + \'&town='.$this->params['town'].'&news_type='.$this->params['news_type'].'&_date_from='.$this->params['_date_from'].'&_date_to='.$this->params['_date_to'].'\';"');
                 }
             break;
             case "14"://boxes
@@ -1046,7 +1046,7 @@ class news extends content
                             }
                         }
                         if(!empty($res['_file'][$i])){if(strpos($res['_file'][$i],'.')===false){$_file=' <span style="background-color:#ccc">'.$res[_file][$i].'</span> ';}else{$_file='';}}else{$_file='';}
-                        if(!empty($res['icon'][$i])){$img='<img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'][$i].'" width="120" align="'._ALIGN_.'" />';}
+                        if(!empty($res['icon'][$i])){$img='<img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'][$i].'" width="120" align="'._ALIGN_.'" />';}
                         print('<td dir="'._DIR.'" align="'._ALIGN_.'" style="font-family: Times New Roman,Arial, Helvetica, Sans-Serif;font-size:11px;vertical-align:top;text-align:center" width="390" valign="top">');
                         echo str_replace('<tag />',$img.'<span style="color:#969696;border:#333 solid 1px;">'.$res[_author][$i].'</span>'.$_file.'<br /><span style="color:#969696;border:#333 solid 1px;">'.$res[_date][$i].'</span><br /><br />'.$res['descr'][$i].' <div class="more"><a  href="?l='.$res['language'][$i].'&id='.$res['id'][$i].'&type='.$resu['type'][0].'&page='.$this->params['page'].'&event='.$event.'&title='.clean::clean_url($res['title'][$i]).'" style="color:#8E0707;font-size:11px;">'._MORE.'...</a><br /><br />'.$this->share($res,$i),str_replace('<title_ />','<b>'.$res[title][$i].'</b>',$box));
                         print('</td><td>&nbsp;</td>');
@@ -1106,7 +1106,7 @@ class news extends content
                     $item.='<li><a title="'.clean::burn($vv[descr]).'" href="?l='.$vv['language'].'&id='.$vv['id'].'&type='.$vv['type'].'&page='.$this->params['page'].'&event='.$event.'&title='.clean::clean_url($vv['title']).'">'.clean::burn($vv[title]).'</a></li>';
                 }
                 $item.='</ul>';
-                echo str_replace('<title_ />','<a  href="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'rss.php?l='.$this->params['l'].'&id='.$k.'"><img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'images/rssicon.png" height="20" title="rss" alt="RSS" border="0" align="'._ALIGN_.'" style="padding: 5px" /></a><b>'.$this->get_title($k).'</b>',str_replace('<tag />',$item,$box));
+                echo str_replace('<title_ />','<a  href="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'rss.php?l='.$this->params['l'].'&id='.$k.'"><img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'images/rssicon.png" height="20" title="rss" alt="RSS" border="0" align="'._ALIGN_.'" style="padding: 5px" /></a><b>'.$this->get_title($k).'</b>',str_replace('<tag />',$item,$box));
                 print('</td>');
                 if($u%2==0){print('</tr><tr>');}
                 $u++;
@@ -1148,7 +1148,7 @@ class news extends content
                         }
                     }
                     if(!empty($res['_file'][$i])){if(strpos($res['_file'][$i],'.')===false){$_file=' <span style="background-color:#ccc">'.$res[_file][$i].'</span> ';}else{$_file='';}}else{$_file='';}
-                    if(!empty($res['icon'][$i])){$img='<img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'][$i].'" width="120" height="150" align="'._ALIGN.'" style="padding:5px" />';}
+                    if(!empty($res['icon'][$i])){$img='<img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'][$i].'" width="120" height="150" align="'._ALIGN.'" style="padding:5px" />';}
                     if($u==1)
                     {
                         $content='<div style="float:'._ALIGN.';height:150px;width:320px;overflow: hidden;border:0px solid #ccc;border-left-width:1px;text-align:justify;padding:5px;">'
@@ -1202,7 +1202,7 @@ class news extends content
                         }
                     }
                     if(!empty($res['_file'][$i])){if(strpos($res['_file'][$i],'.')===false){$_file=' <span style="background-color:#ccc">'.$res[_file][$i].'</span> ';}else{$_file='';}}else{$_file='';}
-                    if(!empty($res['icon'][$i])){$img='<img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'][$i].'" width="60" height="75" align="'._ALIGN.'" style="padding:5px" />';}
+                    if(!empty($res['icon'][$i])){$img='<img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'][$i].'" width="60" height="75" align="'._ALIGN.'" style="padding:5px" />';}
                     
                     if($u<=2)
                     {
@@ -1252,7 +1252,7 @@ class news extends content
             {
                 //print('<div style="text-direction:ltr;direction:ltr" dir="ltr">'.print_r($v).'</div>');
                 if($u!=1){$content.='<td style="border: 0px solid #ccc;border-'._ALIGN.'-width:1px;"> <td>';}
-                $content.='<td dir="'._DIR.'" valign="top"><a  href="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'rss.php?l='.$this->params['l'].'&id='.$k.'"><img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'images/rssicon.png" height="20" title="rss" alt="RSS" border="0" align="'._ALIGN_.'" style="padding: 5px" /></a><b>'.$this->get_title($k).'</b>';
+                $content.='<td dir="'._DIR.'" valign="top"><a  href="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'rss.php?l='.$this->params['l'].'&id='.$k.'"><img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'images/rssicon.png" height="20" title="rss" alt="RSS" border="0" align="'._ALIGN_.'" style="padding: 5px" /></a><b>'.$this->get_title($k).'</b>';
                 $content.='<ul style="margin:0;padding:0;margin-top:15px;width:100%;">';
                 foreach($v as $kk=>$vv)
                 {
@@ -1277,7 +1277,7 @@ class news extends content
                     $content.='<li><a title="'.clean::burn($vv[descr]).'" href="?l='.$vv['language'].'&id='.$vv['id'].'&type='.$vv['type'].'&page='.$this->params['page'].'&event='.$event.'&title='.clean::clean_url($vv['title']).'">'.clean::burn($vv[title]).'</a><br /><span style="color:#969696;float:right">'.$vv['_author'].'</span><span style="color:#969696;float:left">'.$vv['_date'].'</span><div style="clear:both"></div></li>';
                 }
                 $content.='</ul>';
-                //echo str_replace('<title_ />','<a  href="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'rss.php?l='.$vv['language'].'&id='.$vv[id].'"><img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'images/rssicon.png" height="20" title="rss" alt="RSS" border="0" align="'._ALIGN_.'" style="padding: 5px" /></a><b>'.$v[$kk][title_parent].'</b>',str_replace('<tag />',$item,$box));
+                //echo str_replace('<title_ />','<a  href="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'rss.php?l='.$vv['language'].'&id='.$vv[id].'"><img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'images/rssicon.png" height="20" title="rss" alt="RSS" border="0" align="'._ALIGN_.'" style="padding: 5px" /></a><b>'.$v[$kk][title_parent].'</b>',str_replace('<tag />',$item,$box));
                 $content.='</td>';
                 //if($u%2==0){print('</tr><tr>');}
                 $u++;
@@ -1333,7 +1333,7 @@ class news extends content
                             $event='view';
                         }
                     }
-                    if(!empty($vv['icon'])){$img='<img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$vv['icon'].'" height="100" style="padding:5px" />';}
+                    if(!empty($vv['icon'])){$img='<img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$vv['icon'].'" height="100" style="padding:5px" />';}
                     if($j==1)
                     {
                         $item.='<li style="list-style-type: none;border:0 #ccc;border-bottom-width:1px;border-style:solid;margin-bottom:15px"><p align="center">'.$img.'</p>'
@@ -1351,7 +1351,7 @@ class news extends content
                     $j++;
                 }
                 $item.='</ul>';
-                echo str_replace('<title_ />','<a  href="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'rss.php?l='.$this->params['l'].'&id='.$k.'"><img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'images/rssicon.png" height="20" title="rss" alt="RSS" border="0" align="'._ALIGN_.'" style="padding: 5px" /></a><b>'.$this->get_title($k).'</b>',str_replace('<tag />',$item,$box));
+                echo str_replace('<title_ />','<a  href="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'rss.php?l='.$this->params['l'].'&id='.$k.'"><img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'images/rssicon.png" height="20" title="rss" alt="RSS" border="0" align="'._ALIGN_.'" style="padding: 5px" /></a><b>'.$this->get_title($k).'</b>',str_replace('<tag />',$item,$box));
                 print('</td>');
                 if($u%2==0){print('</tr><tr>');}
                 $u++;
@@ -1406,7 +1406,7 @@ class news extends content
                             $event='view';
                         }
                     }
-                    if(!empty($vv['icon'])){$img='<img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$vv['icon'].'" height="75" align="'._ALIGN.'" style="padding:5px" />';}
+                    if(!empty($vv['icon'])){$img='<img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$vv['icon'].'" height="75" align="'._ALIGN.'" style="padding:5px" />';}
                     if($j<3)
                     {
                         $item.='<li style="list-style-type: none;border:0 #ccc;border-bottom-width:1px;border-style:solid;margin-bottom:15px;height: 80px;">'.$img
@@ -1423,7 +1423,7 @@ class news extends content
                     $j++;
                 }
                 $item.='</ul>';
-                echo str_replace('<title_ />','<a  href="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'rss.php?l='.$this->params['l'].'&id='.$k.'"><img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'images/rssicon.png" height="20" title="rss" alt="RSS" border="0" align="'._ALIGN_.'" style="padding: 5px" /></a><b>'.$this->get_title($k).'</b>',str_replace('<tag />',$item,$box));
+                echo str_replace('<title_ />','<a  href="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'rss.php?l='.$this->params['l'].'&id='.$k.'"><img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'images/rssicon.png" height="20" title="rss" alt="RSS" border="0" align="'._ALIGN_.'" style="padding: 5px" /></a><b>'.$this->get_title($k).'</b>',str_replace('<tag />',$item,$box));
                 print('</td>');
                 if($u%2==0){print('</tr><tr>');}
                 $u++;
@@ -1465,8 +1465,8 @@ class news extends content
                             }
                         }
                         //if(!empty($res['_file'][$i])){if(strpos($res['_file'][$i],'.')===false){$_file=' <span style="color:#969696;">'.$res[_file][$i].'</span> ';}else{$_file='';}}else{$_file='';}
-                        //if(!empty($res['icon'][$i])){$img='<img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'][$i].'" width="90" align="'._ALIGN.'" />';}
-                        print('<td dir="'._DIR.'" width="360" valign="top"><img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/icon.png" height="20" align="absmiddle" /> <a style="font-size: 14px;" href="?l='.$res['language'][$i].'&id='.$res['id'][$i].'&type='.$resu['type'][0].'&page='.$this->params['page'].'&event='.$event.'&title='.clean::clean_url($res['title'][$i]).'" title="'.$res['descr'][$i].'"><b>'.$res[title][$i].'</b></a></td>');
+                        //if(!empty($res['icon'][$i])){$img='<img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'][$i].'" width="90" align="'._ALIGN.'" />';}
+                        print('<td dir="'._DIR.'" width="360" valign="top"><img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/icon.png" height="20" align="absmiddle" /> <a style="font-size: 14px;" href="?l='.$res['language'][$i].'&id='.$res['id'][$i].'&type='.$resu['type'][0].'&page='.$this->params['page'].'&event='.$event.'&title='.clean::clean_url($res['title'][$i]).'" title="'.$res['descr'][$i].'"><b>'.$res[title][$i].'</b></a></td>');
                         if($u%2==0){print('</tr><tr>');}
                         else{print('<td style="border: 0px solid;border-right-width:1px;"> <td>');}
                         $u++;
@@ -1479,7 +1479,7 @@ class news extends content
                     {
                         $pages[$j]=$j;
                     }
-                    form::add_select('rec',$pages,$this->params['rec'],'',_PAGE,'onchange="location.href=\'http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'?l='.$this->params['l'].'&id='.$this->params['id'].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event='.$this->params['event'].'&title='.$this->params['title'].'&q_sec='.$this->params['q_sec'].'&rec=\' + this.value + \'&town='.$this->params['town'].'&news_type='.$this->params['news_type'].'&_date_from='.$this->params['_date_from'].'&_date_to='.$this->params['_date_to'].'\';"');
+                    form::add_select('rec',$pages,$this->params['rec'],'',_PAGE,'onchange="location.href=\'http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'?l='.$this->params['l'].'&id='.$this->params['id'].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event='.$this->params['event'].'&title='.$this->params['title'].'&q_sec='.$this->params['q_sec'].'&rec=\' + this.value + \'&town='.$this->params['town'].'&news_type='.$this->params['news_type'].'&_date_from='.$this->params['_date_from'].'&_date_to='.$this->params['_date_to'].'\';"');
                 }
             break;
             case "24"://Two Title Columns with date and source
@@ -1509,8 +1509,8 @@ class news extends content
                             }
                         }
                         //if(!empty($res['_file'][$i])){if(strpos($res['_file'][$i],'.')===false){$_file=' <span style="color:#969696;">'.$res[_file][$i].'</span> ';}else{$_file='';}}else{$_file='';}
-                        //if(!empty($res['icon'][$i])){$img='<img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'][$i].'" width="90" align="'._ALIGN.'" />';}
-                        print('<td dir="'._DIR.'" width="360" valign="top"><img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/icon.png" height="20" align="absmiddle" /> <a style="font-size: 14px;" href="?l='.$res['language'][$i].'&id='.$res['id'][$i].'&type='.$resu['type'][0].'&page='.$this->params['page'].'&event='.$event.'&title='.clean::clean_url($res['title'][$i]).'" title="'.$res['descr'][$i].'"><b>'.$res[title][$i].'</b></a><br />'.$res['_date'][$i].' <span style="float: '._ALIGN_.';">'.$res['_author'][$i].'</span></td>');
+                        //if(!empty($res['icon'][$i])){$img='<img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'][$i].'" width="90" align="'._ALIGN.'" />';}
+                        print('<td dir="'._DIR.'" width="360" valign="top"><img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/icon.png" height="20" align="absmiddle" /> <a style="font-size: 14px;" href="?l='.$res['language'][$i].'&id='.$res['id'][$i].'&type='.$resu['type'][0].'&page='.$this->params['page'].'&event='.$event.'&title='.clean::clean_url($res['title'][$i]).'" title="'.$res['descr'][$i].'"><b>'.$res[title][$i].'</b></a><br />'.$res['_date'][$i].' <span style="float: '._ALIGN_.';">'.$res['_author'][$i].'</span></td>');
                         if($u%2==0){print('</tr><tr>');}
                         else{print('<td style="border: 0px solid;border-right-width:1px;"> <td>');}
                         $u++;
@@ -1523,7 +1523,7 @@ class news extends content
                     {
                         $pages[$j]=$j;
                     }
-                    form::add_select('rec',$pages,$this->params['rec'],'',_PAGE,'onchange="location.href=\'http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'?l='.$this->params['l'].'&id='.$this->params['id'].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event='.$this->params['event'].'&title='.$this->params['title'].'&q_sec='.$this->params['q_sec'].'&rec=\' + this.value + \'&town='.$this->params['town'].'&news_type='.$this->params['news_type'].'&_date_from='.$this->params['_date_from'].'&_date_to='.$this->params['_date_to'].'\';"');
+                    form::add_select('rec',$pages,$this->params['rec'],'',_PAGE,'onchange="location.href=\'http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'?l='.$this->params['l'].'&id='.$this->params['id'].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event='.$this->params['event'].'&title='.$this->params['title'].'&q_sec='.$this->params['q_sec'].'&rec=\' + this.value + \'&town='.$this->params['town'].'&news_type='.$this->params['news_type'].'&_date_from='.$this->params['_date_from'].'&_date_to='.$this->params['_date_to'].'\';"');
                 }
             break;
             case "25"://عمودين من العناوين مع التاريخ والمصدر
@@ -1568,7 +1568,7 @@ class news extends content
                     $item.='<li><a title="'.clean::burn($vv[descr]).'" href="?l='.$vv['language'].'&id='.$vv['id'].'&type='.$vv['type'].'&page='.$this->params['page'].'&event='.$event.'&title='.clean::clean_url($vv['title']).'">'.clean::burn($vv[title]).'</a><br /><span style="color:#969696;float:right">'.$vv['_author'].'</span><span style="color:#969696;float:left">'.$vv['_date'].'</span><div style="clear:both"></div></li>';
                 }
                 $item.='</ul>';
-                echo str_replace('<title_ />','<a  href="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'rss.php?l='.$this->params['l'].'&id='.$k.'"><img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'images/rssicon.png" height="20" title="rss" alt="RSS" border="0" align="'._ALIGN_.'" style="padding: 5px" /></a><b>'.$this->get_title($k).'</b>',str_replace('<tag />',$item,$box));
+                echo str_replace('<title_ />','<a  href="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'rss.php?l='.$this->params['l'].'&id='.$k.'"><img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'images/rssicon.png" height="20" title="rss" alt="RSS" border="0" align="'._ALIGN_.'" style="padding: 5px" /></a><b>'.$this->get_title($k).'</b>',str_replace('<tag />',$item,$box));
                 print('</td>');
                 if($u%2==0){print('</tr><tr>');}
                 $u++;
@@ -1625,7 +1625,7 @@ class news extends content
                     $item.='<li><a title="'.clean::burn($vv[descr]).'" href="?l='.$vv['language'].'&id='.$vv['id'].'&type='.$vv['type'].'&page='.$this->params['page'].'&event='.$event.'&title='.clean::clean_url($vv['title']).'">'.clean::burn($vv[title]).'</a></li>';
                 }
                 $item.='</ul>';
-                echo str_replace('<title_ />','<a  href="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'rss.php?l='.$this->params['l'].'&id='.$k.'"><img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'images/rssicon.png" height="20" title="rss" alt="RSS" border="0" align="'._ALIGN_.'" style="padding: 5px" /></a><b>'.$this->get_title($k).'</b>',str_replace('<tag />',$item,$box));
+                echo str_replace('<title_ />','<a  href="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'rss.php?l='.$this->params['l'].'&id='.$k.'"><img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'images/rssicon.png" height="20" title="rss" alt="RSS" border="0" align="'._ALIGN_.'" style="padding: 5px" /></a><b>'.$this->get_title($k).'</b>',str_replace('<tag />',$item,$box));
                 print('</td>');
                 //if($u%2==0){print('</tr><tr>');}
                 //$u++;
@@ -1682,7 +1682,7 @@ class news extends content
                     $item.='<li><a title="'.clean::burn($vv[descr]).'" href="?l='.$vv['language'].'&id='.$vv['id'].'&type='.$vv['type'].'&page='.$this->params['page'].'&event='.$event.'&title='.clean::clean_url($vv['title']).'">'.clean::burn($vv[title]).'</a><br /><span style="color:#969696;float:right">'.$vv['_author'].'</span><span style="color:#969696;float:left">'.$vv['_date'].'</span><div style="clear:both"></div></li>';
                 }
                 $item.='</ul>';
-                echo str_replace('<title_ />','<a  href="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'rss.php?l='.$this->params['l'].'&id='.$k.'"><img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'images/rssicon.png" height="20" title="rss" alt="RSS" border="0" align="'._ALIGN_.'" style="padding: 5px" /></a><b>'.$this->get_title($k).'</b>',str_replace('<tag />',$item,$box));
+                echo str_replace('<title_ />','<a  href="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'rss.php?l='.$this->params['l'].'&id='.$k.'"><img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'images/rssicon.png" height="20" title="rss" alt="RSS" border="0" align="'._ALIGN_.'" style="padding: 5px" /></a><b>'.$this->get_title($k).'</b>',str_replace('<tag />',$item,$box));
                 print('</td>');
                 //if($u%2==0){print('</tr><tr>');}
                 //$u++;
@@ -1739,7 +1739,7 @@ class news extends content
                     $item.='<li style="margin:3px;padding:3px;list-style-type:square"><a title="'.clean::burn($vv[descr]).'" href="?l='.$vv['language'].'&id='.$vv['id'].'&type='.$vv['type'].'&page='.$this->params['page'].'&event='.$event.'&title='.clean::clean_url($vv['title']).'" style="font-size:12px">'.clean::burn($vv[title]).'</a></li>';
                 }
                 $item.='</ul>';
-                echo str_replace('<title_ />','<a  href="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'rss.php?l='.$this->params['l'].'&id='.$k.'"><img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'images/rssicon.png" height="20" title="rss" alt="RSS" border="0" align="'._ALIGN_.'" style="padding: 5px" /></a><a title="'.clean::burn($this->get_title($k)).'" href="?l='.$vv['language'].'&id='.$k.'&type='.$vv['type'].'&page='.$this->params['page'].'&event=browse&title='.clean::clean_url($this->get_title($k)).'"><b style="color:#3366FF;font-family:tahoma;">'.$this->get_title($k).'</b></a>',str_replace('<tag />',$item,$box));
+                echo str_replace('<title_ />','<a  href="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'rss.php?l='.$this->params['l'].'&id='.$k.'"><img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'images/rssicon.png" height="20" title="rss" alt="RSS" border="0" align="'._ALIGN_.'" style="padding: 5px" /></a><a title="'.clean::burn($this->get_title($k)).'" href="?l='.$vv['language'].'&id='.$k.'&type='.$vv['type'].'&page='.$this->params['page'].'&event=browse&title='.clean::clean_url($this->get_title($k)).'"><b style="color:#3366FF;font-family:tahoma;">'.$this->get_title($k).'</b></a>',str_replace('<tag />',$item,$box));
                 print('</td>');
                 if($u%2==0){print('</tr><tr>');}
                 $u++;
@@ -1779,7 +1779,7 @@ class news extends content
                                 $event='view';
                             }
                         }
-                        if(!empty($res['icon'][$i])){$img='<img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'][$i].'" width="100" align="'._ALIGN.'" />';}
+                        if(!empty($res['icon'][$i])){$img='<img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'][$i].'" width="100" align="'._ALIGN.'" />';}
                         //print('<div id="news"><img src="upload/'.$res['icon'][$i].'" width="120" border="0" title="'.$res['title'][$i].'" align="center" />'.$res['title'][$i].'<span id="more"><a  href="?l='.$res['language'][$i].'&page='.$this->params['page'].'&type='.$this->params['type'].'&id='.$res['id'][$i].'&brand='.$this->params['brand'].'&event=view">'._MORE.'...</a></span></div><br />');
                         //block_::box_border('<div class="news" style="font-size:11px;height:80px;vertical-align:middle;" dir="'._DIR.'"><img src="upload/'.$res['icon'][$i].'" width="120" border="0" title="'.$res['title'][$i].'" align="'._ALIGN.'" valign="middle" /> &nbsp; &nbsp;'.$res['descr'][$i].'<div class="more"><a  href="?l='.$res['language'][$i].'&page='.$this->params['page'].'&type=body&id='.$res['id'][$i].'&brand='.$this->params['brand'].'" style="color:#11a8e7;font-size:11px;">'._MORE.'...</a></div></div>','#ffffff','100%',' valign="middle"');
                         //block_::box_border('<table width="100%"><tr><td dir="'._DIR.'" height="80"><img src="upload/'.$res['icon'][$i].'" width="120" border="0" title="'.$res['title'][$i].'" align="'._ALIGN.'" valign="middle" /></td><td style="font-size:11px;height:80px;vertical-align:middle;" width="70%"> &nbsp; &nbsp;'.$res['descr'][$i].'</td><td><div class="more"><a  href="page_'.$res['language'][$i].'_'.$res['id'][$i].'_news_'.$this->params['page'].'_'.$this->params['brand'].'_view_'.clean::clean_url($res['title'][$i]).'" style="color:#11a8e7;font-size:11px;">'._MORE.'...</a></td></tr></table>','#ffffff','100%',' valign="middle"');
@@ -1797,7 +1797,7 @@ class news extends content
                     {
                         $pages[$j]=$j;
                     }
-                    form::add_select('rec',$pages,$this->params['rec'],'',_PAGE,'onchange="location.href=\'http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'?l='.$this->params['l'].'&id='.$this->params['id'].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event='.$this->params['event'].'&title='.$this->params['title'].'&q_sec='.$this->params['q_sec'].'&rec=\' + this.value + \'&town='.$this->params['town'].'&news_type='.$this->params['news_type'].'&_date_from='.$this->params['_date_from'].'&_date_to='.$this->params['_date_to'].'\';"');
+                    form::add_select('rec',$pages,$this->params['rec'],'',_PAGE,'onchange="location.href=\'http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'?l='.$this->params['l'].'&id='.$this->params['id'].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event='.$this->params['event'].'&title='.$this->params['title'].'&q_sec='.$this->params['q_sec'].'&rec=\' + this.value + \'&town='.$this->params['town'].'&news_type='.$this->params['news_type'].'&_date_from='.$this->params['_date_from'].'&_date_to='.$this->params['_date_to'].'\';"');
                 }
         }
         $_GET['v']='';//horizontal
@@ -1845,7 +1845,7 @@ class news extends content
         $html=$this->navigator($html);
         ob_start();
         //print('<br />');
-        print('<link rel="stylesheet" type="text/css" media="all" href="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'js/jscalendar/calendar-win2k-cold-1.css" title="win2k-cold-1" /><script type="text/javascript" src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'js/jscalendar/calendar.js"></script><script type="text/javascript" src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'js/jscalendar/lang/calendar-en.js"></script><script type="text/javascript" src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'js/jscalendar/calendar-setup.js"></script>');
+        print('<link rel="stylesheet" type="text/css" media="all" href="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'js/jscalendar/calendar-win2k-cold-1.css" title="win2k-cold-1" /><script type="text/javascript" src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'js/jscalendar/calendar.js"></script><script type="text/javascript" src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'js/jscalendar/lang/calendar-en.js"></script><script type="text/javascript" src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'js/jscalendar/calendar-setup.js"></script>');
         if($this->params['main']===true){$limit=6;}else{$limit=20;}
         if(!empty($this->params['q_sec'])){$sql=" and (a.title like '%".$this->params['q_sec']."%' or a.descr like '%".$this->params['q_sec']."%' or a.body like '%".$this->params['q_sec']."%' or a.keywords like '%".$this->params['q_sec']."%')";}
         if(!empty($this->params['town'])){$sql.=" and a._file='".$this->params['town']."'";}
@@ -1861,7 +1861,7 @@ class news extends content
         ///switch data appearacne
         //$resu['type']=$res['type'];
         print('<span style="float: '._ALIGN_.';">');
-        print('<a  href="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'rss.php?l='.$this->params['l'].'&id='.$resu[id][0].'"><img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'images/rssicon.png" align="'._ALIGN_.'" height="20" title="rss" alt="RSS" border="0" /></a>');
+        print('<a  href="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'rss.php?l='.$this->params['l'].'&id='.$resu[id][0].'"><img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'images/rssicon.png" align="'._ALIGN_.'" height="20" title="rss" alt="RSS" border="0" /></a>');
         form::add_select('town',array(''=>'')+$this->get_towns(),$this->params['town'],'',_QUARTER,'id="town" title="الحي" style="width:70px"');
         form::add_select('news_type',array(''=>'')+$this->get_news_type(),$this->params['news_type'],'',_NEWS_TYPE,'id="news_type" title="نوع الخبر" style="width:70px"');
         form::add_input('_date_from','text',_FROM.' '._DATE,$this->params[_date_from],'id="_date_from" dir="ltr" size="6"');print('<script type="text/javascript">Calendar.setup({inputField:"_date_from",button:"_date_form",align:"Br"});</script>');
@@ -1869,11 +1869,11 @@ class news extends content
         form::add_input('q_sec','text',_SEARCH.' '._WORD,$this->params['q_sec'],'id="q_sec" size="10"');
         if(empty($this->params['d']))
         {
-            form::add_input('req','button','',_SEARCH,'class="button" onclick="location.href=\'http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'?l='.$this->params['l'].'&id='.$resu['id'][0].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event=0&title='.urlencode($this->params['title']).'&q_sec=\' + getElementById(\'q_sec\').value + \'&town=\' + getElementById(\'town\').value + \'&news_type=\' + getElementById(\'news_type\').value + \'&_date_from=\' + getElementById(\'_date_from\').value + \'&_date_to=\' + getElementById(\'_date_to\').value;"');
+            form::add_input('req','button','',_SEARCH,'class="button" onclick="location.href=\'http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'?l='.$this->params['l'].'&id='.$resu['id'][0].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event=0&title='.urlencode($this->params['title']).'&q_sec=\' + getElementById(\'q_sec\').value + \'&town=\' + getElementById(\'town\').value + \'&news_type=\' + getElementById(\'news_type\').value + \'&_date_from=\' + getElementById(\'_date_from\').value + \'&_date_to=\' + getElementById(\'_date_to\').value;"');
         }
         else
         {
-            form::add_input('req','button','',_SEARCH,'class="button" onclick="_(\'#news_id\').html(\'<div style=width:30%;margin-right:auto;margin-left:auto;text-align:center><img src=http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/ajax_loader_gray_64.gif border=0/></div>\');_.get(\'http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'classes/block/page/ajax.php?d=\'+new Date().getTime()+\'&l='.$this->params['l'].'&id='.$resu['id'][0].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event=preview&title='.urlencode($this->params['title']).'&q_sec=\' + getElementById(\'q_sec\').value + \'&town=\' + getElementById(\'town\').value + \'&news_type=\' + getElementById(\'news_type\').value + \'&_date_from=\' + getElementById(\'_date_from\').value + \'&_date_to=\' + getElementById(\'_date_to\').value,function(data){_(\'#news_id\').html(data);});"');
+            form::add_input('req','button','',_SEARCH,'class="button" onclick="_(\'#news_id\').html(\'<div style=width:30%;margin-right:auto;margin-left:auto;text-align:center><img src=http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/ajax_loader_gray_64.gif border=0/></div>\');_.get(\'http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'classes/block/page/ajax.php?d=\'+new Date().getTime()+\'&l='.$this->params['l'].'&id='.$resu['id'][0].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event=preview&title='.urlencode($this->params['title']).'&q_sec=\' + getElementById(\'q_sec\').value + \'&town=\' + getElementById(\'town\').value + \'&news_type=\' + getElementById(\'news_type\').value + \'&_date_from=\' + getElementById(\'_date_from\').value + \'&_date_to=\' + getElementById(\'_date_to\').value,function(data){_(\'#news_id\').html(data);});"');
         }        
         print('</span><br /><br /><br /><div id="news_id">');
         $this->fc($resu,$no,$res);
@@ -1913,7 +1913,7 @@ class news extends content
         {
             $share='<tr><td colspan="3"><!-- AddThis Button BEGIN -->
                     <div class="addthis_toolbox addthis_default_style "
-                    addthis:url="http:'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'/?l='.$this->params['l'].'&id='.$res['id'][0].'&type='.$res['type'][0].'&page='.$this->params['page'][0].'&event=0&title='.clean::clean_url($res[title][0]).'"
+                    addthis:url="http:'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'/?l='.$this->params['l'].'&id='.$res['id'][0].'&type='.$res['type'][0].'&page='.$this->params['page'][0].'&event=0&title='.clean::clean_url($res[title][0]).'"
                     addthis:title="'.$res['title'][0].'"
                     addthis:description="'.$res['descr'][0].'">
                     <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -1935,7 +1935,7 @@ class news extends content
         }
         keywords_related::data_menu($this->params['l'],$res['id'][0],$keyword);
         keywords_related::data_related($this->params['l'],$res['id'][0],$related);
-        if(!empty($res['icon'][0])){$img='<img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'][0].'" width="120" align="'._ALIGN_.'" />';}
+        if(!empty($res['icon'][0])){$img='<img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'][0].'" width="120" align="'._ALIGN_.'" />';}
         block_::box_border('<table width="100%" border="0">
                 <tr style="font-size:14px;font-family:Times New Roman,Arial, Helvetica, Sans-Serif;"><td dir="'._DIR.'"><b>'.$res[title][0].'</b></td><td dir="'._DIR.'"></td><td dir="'._DIR.'"></td><td dir="'._DIR.'"></td></tr>
                 <tr><td style="font-size:11px;font-family:Times New Roman,Arial, Helvetica, Sans-Serif;vertical-align:top;" colspan="4"> &nbsp; &nbsp;<span></span>'.$img.'</td></tr>
@@ -1976,7 +1976,7 @@ class books extends news
         $html=$this->navigator($html);
         ob_start();
         //print('<br />');
-        print('<link rel="stylesheet" type="text/css" media="all" href="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'js/jscalendar/calendar-win2k-cold-1.css" title="win2k-cold-1" /><script type="text/javascript" src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'js/jscalendar/calendar.js"></script><script type="text/javascript" src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'js/jscalendar/lang/calendar-en.js"></script><script type="text/javascript" src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'js/jscalendar/calendar-setup.js"></script>');
+        print('<link rel="stylesheet" type="text/css" media="all" href="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'js/jscalendar/calendar-win2k-cold-1.css" title="win2k-cold-1" /><script type="text/javascript" src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'js/jscalendar/calendar.js"></script><script type="text/javascript" src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'js/jscalendar/lang/calendar-en.js"></script><script type="text/javascript" src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'js/jscalendar/calendar-setup.js"></script>');
         if($this->params['main']===true){$limit=6;}else{$limit=20;}
         if(!empty($this->params['q_sec'])){$sql=" and (title like '%".$this->params['q_sec']."%' or descr like '%".$this->params['q_sec']."%' or _author like '%".$this->params['q_sec']."%' or body like '%".$this->params['q_sec']."%' or keywords like '%".$this->params['q_sec']."%')";}
         if(!empty($this->params['_date_from']) && !empty($this->params['_date_to'])){$sql.=" and _date between '".$this->params['_date_from']."' and '".$this->params['_date_to']."'";}
@@ -1989,11 +1989,11 @@ class books extends news
         if($this->params['main']===true){}else
         {
             print('<span style="float: '._ALIGN_.';">');
-            print('<a  href="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'rss.php?l='.$this->params['l'].'&id='.$resu[id][0].'"><img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'images/rssicon.png" align="'._ALIGN_.'" height="20" title="rss" alt="RSS" border="0" /></a>');
+            print('<a  href="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'rss.php?l='.$this->params['l'].'&id='.$resu[id][0].'"><img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'images/rssicon.png" align="'._ALIGN_.'" height="20" title="rss" alt="RSS" border="0" /></a>');
             form::add_input('_date_from','text',_FROM.' '._DATE,$this->params[_date_from],'id="_date_from" dir="ltr" size="6"');print('<script type="text/javascript">Calendar.setup({inputField:"_date_from",button:"_date_from",align:"Br"});</script>');
             form::add_input('_date_to','text',_TO.' '._DATE,$this->params[_date_to],'id="_date_to" dir="ltr" size="6" title="'._TO.'"');print('<script type="text/javascript">Calendar.setup({inputField:"_date_to",button:"_date_to",align:"Br"});</script>');
             form::add_input('q_sec','text',_SEARCH.' '._WORD,$this->params['q_sec'],'id="q_sec" size="10"');
-            form::add_input('req','button','',_SEARCH,'class="button" onclick="location.href=\'http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'?l='.$this->params['l'].'&id='.$resu['id'][0].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event=0&title='.urlencode($this->params['title']).'&q_sec=\' + getElementById(\'q_sec\').value + \'&_date_from=\' + getElementById(\'_date_from\').value + \'&_date_to=\' + getElementById(\'_date_to\').value;"');
+            form::add_input('req','button','',_SEARCH,'class="button" onclick="location.href=\'http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'?l='.$this->params['l'].'&id='.$resu['id'][0].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event=0&title='.urlencode($this->params['title']).'&q_sec=\' + getElementById(\'q_sec\').value + \'&_date_from=\' + getElementById(\'_date_from\').value + \'&_date_to=\' + getElementById(\'_date_to\').value;"');
             print('</span><br /><br /><br />');
         }
         
@@ -2029,7 +2029,7 @@ class books extends news
         {
             $share='<tr><td colspan="3"><!-- AddThis Button BEGIN -->
                     <div class="addthis_toolbox addthis_default_style "
-                    addthis:url="http:'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'/?l='.$this->params['l'].'&id='.$res['id'][0].'&type='.$res['type'][0].'&page='.$this->params['page'][0].'&event=0&title='.clean::clean_url($res[title][0]).'"
+                    addthis:url="http:'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'/?l='.$this->params['l'].'&id='.$res['id'][0].'&type='.$res['type'][0].'&page='.$this->params['page'][0].'&event=0&title='.clean::clean_url($res[title][0]).'"
                     addthis:title="'.$res['title'][0].'"
                     addthis:description="'.$res['descr'][0].'">
                     <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -2054,12 +2054,12 @@ class books extends news
         {
             if(substr($res['_file'][0],-4)=='.pdf')
             {
-                $viewer='<iframe src="http://docs.google.com/viewer?url='.urlencode('http://'.$_SERVER['SERVER_NAME'].'/upload/'.$res['_file'][0]).'&embedded=true" width="750" height="900" style="border: none;"></iframe>';
+                $viewer='<iframe src="http://docs.google.com/viewer?url='.urlencode('http://'.$_SERVER['HTTP_HOST'].'/upload/'.$res['_file'][0]).'&embedded=true" width="750" height="900" style="border: none;"></iframe>';
                 $dwnld_file='';
             }
             else
             {
-                $dwnld_file='<img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/images/icons/download_file.png" width="100" border="0" alt="تنزيل الملف" title="تنزيل الملف" />';
+                $dwnld_file='<img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/images/icons/download_file.png" width="100" border="0" alt="تنزيل الملف" title="تنزيل الملف" />';
                 $viewer='';
             }
         }
@@ -2073,7 +2073,7 @@ class books extends news
                 <tr><td style="font-size:11px;font-family:Times New Roman,Arial, Helvetica, Sans-Serif;vertical-align:top;" colspan="3"> &nbsp; &nbsp;<span>'.$res['descr'][0].'</span> </td></tr>
                 <tr><td style="vertical-align:top;" colspan="3"> &nbsp; &nbsp;'.embed::embed_rep($res['body'][0]).' </td></tr>
                 <tr><td style="vertical-align:top;" colspan="3">'.$viewer.'</td></tr>
-                <tr><td style="font-size:11px;font-family:Times New Roman,Arial, Helvetica, Sans-Serif;vertical-align:top;" colspan="2">'.$keyword.'</td><td><a  href="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res[_file][0].'" target="_blank">'.$dwnld_file.'</a></td></tr>
+                <tr><td style="font-size:11px;font-family:Times New Roman,Arial, Helvetica, Sans-Serif;vertical-align:top;" colspan="2">'.$keyword.'</td><td><a  href="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res[_file][0].'" target="_blank">'.$dwnld_file.'</a></td></tr>
                 '.$share.'
                 </table><br /><hr />'.$related);
         //print($res['body'][0]);
@@ -2114,7 +2114,7 @@ class files extends content
         for($i=0;$i<count($res['id']);$i++)
         {            
             //print('<div id="news"><img src="upload/'.$res['icon'][$i].'" width="120" border="0" title="'.$res['title'][$i].'" align="center" />'.$res['title'][$i].'<span id="more"><a  href="?l='.$res['language'][$i].'&page='.$this->params['page'].'&type='.$this->params['type'].'&id='.$res['id'][$i].'&brand='.$this->params['brand'].'&event=view">'._MORE.'...</a></span></div><br />');
-            print('<table><tr><td style="font-size:11px;" dir="'._DIR.'"></td><td>&nbsp;</td><td><a  href="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['body'][$i].'" target="_blank"><span style="margin:20px;color:#0072bc;font-size:14px;font-family:Times New Roman,Arial, Helvetica, Sans-Serif;font-weight: bold;">'.$res['title'][$i].'</span></a></td></tr></table>');
+            print('<table><tr><td style="font-size:11px;" dir="'._DIR.'"></td><td>&nbsp;</td><td><a  href="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['body'][$i].'" target="_blank"><span style="margin:20px;color:#0072bc;font-size:14px;font-family:Times New Roman,Arial, Helvetica, Sans-Serif;font-weight: bold;">'.$res['title'][$i].'</span></a></td></tr></table>');
             print('<br />');
         }
         if(!$this->params['main'])
@@ -2123,7 +2123,7 @@ class files extends content
             {
                 $pages[$j]=$j;
             }
-            form::add_select('rec',$pages,$this->params['rec'],'',_PAGE,'onchange="location.href=\'http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'?l='.$this->params['l'].'&id='.$this->params['id'].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event='.$this->params['event'].'&title='.$this->params['title'].'&rec=\' + this.value;"');
+            form::add_select('rec',$pages,$this->params['rec'],'',_PAGE,'onchange="location.href=\'http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'?l='.$this->params['l'].'&id='.$this->params['id'].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event='.$this->params['event'].'&title='.$this->params['title'].'&rec=\' + this.value;"');
         }
         $content = ob_get_contents();
         ob_end_clean();
@@ -2156,7 +2156,7 @@ class files extends content
         {
             $share='<tr><td colspan="3"><!-- AddThis Button BEGIN -->
                     <div class="addthis_toolbox addthis_default_style "
-                    addthis:url="http:'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'/?l='.$this->params['l'].'&id='.$res['id'][0].'&type='.$res['type'][0].'&page='.$this->params['page'][0].'&event=0&title='.clean::clean_url($res[title][0]).'"
+                    addthis:url="http:'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'/?l='.$this->params['l'].'&id='.$res['id'][0].'&type='.$res['type'][0].'&page='.$this->params['page'][0].'&event=0&title='.clean::clean_url($res[title][0]).'"
                     addthis:title="'.$res['title'][0].'"
                     addthis:description="'.$res['descr'][0].'">
                     <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -2216,7 +2216,7 @@ class pro extends content
         for($i=0;$i<count($res['id']);$i++)
         {            
             //print('<div id="news"><a  href="page_'.$res['language'][$i].'_'.$res['id'][$i].'_pro_'.$this->params['page'].'_'.$this->params['brand'].'_view_'.clean::clean_url($res['title'][$i]).'"><img src="upload/'.$res['icon'][$i].'" border="0" title="'.$res['title'][$i].'" align="center" width="725" /></a></div>');
-            print('<div id="news"><a  href="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'?l='.$res['language'][$i].'&id='.$res['id'][$i].'&type=pro&page='.$this->params['page'].'&event=view&title='.clean::clean_url($res['title'][$i]).'"><img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'][$i].'" border="0" title="'.$res['title'][$i].'" align="center" width="225" /></a></div>');
+            print('<div id="news"><a  href="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'?l='.$res['language'][$i].'&id='.$res['id'][$i].'&type=pro&page='.$this->params['page'].'&event=view&title='.clean::clean_url($res['title'][$i]).'"><img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'][$i].'" border="0" title="'.$res['title'][$i].'" align="center" width="225" /></a></div>');
             //block_::box_border('<table><tr><td style="font-size:11px;" dir="'._DIR.'"></td><td>&nbsp;</td><td><span style="margin:20px;color:#0072bc;font-size:14px;font-family:Times New Roman,Arial, Helvetica, Sans-Serif;font-weight: bold;">'.$res['title'][$i].'</span><br />'.$res['body'][$i].'</td></tr></table>');
             print('<br />');
         }
@@ -2226,7 +2226,7 @@ class pro extends content
             {
                 $pages[$j]=$j;
             }
-            form::add_select('rec',$pages,$this->params['rec'],'',_PAGE,'onchange="location.href=\'http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'?l='.$this->params['l'].'&id='.$this->params['id'].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event='.$this->params['event'].'&title='.$this->params['title'].'&rec=\' + this.value;"');
+            form::add_select('rec',$pages,$this->params['rec'],'',_PAGE,'onchange="location.href=\'http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'?l='.$this->params['l'].'&id='.$this->params['id'].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event='.$this->params['event'].'&title='.$this->params['title'].'&rec=\' + this.value;"');
         }
         $content = ob_get_contents();
         ob_end_clean();
@@ -2258,7 +2258,7 @@ class pro extends content
         {
             $share='<tr><td colspan="3"><!-- AddThis Button BEGIN -->
                     <div class="addthis_toolbox addthis_default_style "
-                    addthis:url="http:'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'/?l='.$this->params['l'].'&id='.$res['id'][0].'&type='.$res['type'][0].'&page='.$this->params['page'][0].'&event=0&title='.clean::clean_url($res[title][0]).'"
+                    addthis:url="http:'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'/?l='.$this->params['l'].'&id='.$res['id'][0].'&type='.$res['type'][0].'&page='.$this->params['page'][0].'&event=0&title='.clean::clean_url($res[title][0]).'"
                     addthis:title="'.$res['title'][0].'"
                     addthis:description="'.$res['descr'][0].'">
                     <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>

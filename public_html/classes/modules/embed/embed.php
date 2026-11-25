@@ -380,7 +380,7 @@ class embed
 
                         $thumb=str_replace('upload/images','upload/_thumbs/Images',$match[1][$key]);
 
-                        $embed.='<td align="center"><a href="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).''.$match[1][$key].'/'.$image.'" target="_blank"><img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).''.$thumb.'/'.$image.'" width="100" /></a></td>';
+                        $embed.='<td align="center"><a href="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).''.$match[1][$key].'/'.$image.'" target="_blank"><img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).''.$thumb.'/'.$image.'" width="100" /></a></td>';
 
                         
 

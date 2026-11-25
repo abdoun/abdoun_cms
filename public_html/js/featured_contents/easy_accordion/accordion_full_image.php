@@ -7,7 +7,7 @@ if(!defined('_PHP_DOT_PRO') || _PHP_DOT_PRO!='ebdbf06090f7fcd532551060tfb9a5543'
  **/
  //print_r($resu);?><!-- Scripts -->
       <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>-->
-	  <script type="text/javascript" src="http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/easy_accordion/scripts/jquery.easyAccordion.js"></script>
+	  <script type="text/javascript" src="http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/easy_accordion/scripts/jquery.easyAccordion.js"></script>
       <script type="text/javascript">
       _(document).ready(function () {
           _('#accordion-<?=$resu['id'][0];?>').easyAccordion({ 
@@ -104,7 +104,7 @@ if(!defined('_PHP_DOT_PRO') || _PHP_DOT_PRO!='ebdbf06090f7fcd532551060tfb9a5543'
                         }
                         print('<dt>'.$res[title][$i].'</dt>');
                         ?><dd><?
-                        if(!empty($res['icon'][$i])){$img='<a  href="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'?l='.$res['language'][$i].'&id='.$res['id'][$i].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event='.$event.'&title='.clean::clean_url($res['title'][$i]).'" style="color:#11a8e7;font-size:11px;"><img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'][$i].'" width="420" height="240" border="0" alt="'.$res['descr'][$i].'" title="'.$res['descr'][$i].'" /></a>';}
+                        if(!empty($res['icon'][$i])){$img='<a  href="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'?l='.$res['language'][$i].'&id='.$res['id'][$i].'&type='.$this->params['type'].'&page='.$this->params['page'].'&event='.$event.'&title='.clean::clean_url($res['title'][$i]).'" style="color:#11a8e7;font-size:11px;"><img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/'.$res['icon'][$i].'" width="420" height="240" border="0" alt="'.$res['descr'][$i].'" title="'.$res['descr'][$i].'" /></a>';}
                         print(''.$img.'');
                         ?></dd><?
                     }

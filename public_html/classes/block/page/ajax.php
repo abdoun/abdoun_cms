@@ -2,6 +2,8 @@
 session_start();
 header("Content-Type: text/html; charset=utf-8");
 define('_PHP_DOT_PRO','ebdbf06090f7fcd532551060tfb9a5543');
+if(!defined('_INDEX_PAGE')) define('_INDEX_PAGE','index.php');
+$_SERVER['SCRIPT_NAME'] = '/index.php';
 include_once('../../../../init_conf/config.inc.php');
 /** 
 * @todo Construct modules class 
@@ -29,7 +31,7 @@ else
 //print(basename(__FILE__));
 //define('_INDEX_PAGE','classes/block/page/ajax.php');
 define('_INDEX_PAGE','classes/block/page/ajax.php');
-define('_DEFAULT_TEMPLATE','http://'.$_SERVER['SERVER_NAME'].'/template/springbre/'.$get_lang['shortcut'][0]);
+define('_DEFAULT_TEMPLATE','http://'.$_SERVER['HTTP_HOST'].'/template/springbre/'.$get_lang['shortcut'][0]);
 print('</script><script type="text/javascript" src="../../../js/scripts/javaScript.js"></script><script type="text/javascript" src="../../../js/scripts/jscript.js"></script>');
 require_once("../../../language/".$get_lang['shortcut'][0].".php");
 inclusion::construct_class_file('../../../classes/block/page/app/'.$_GET['page'].'/'.$_GET['page'].'.php',$_GET,$_POST);

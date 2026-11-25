@@ -2,6 +2,8 @@
 session_start();
 header("Content-Type: text/html; charset=utf-8");
 define('_PHP_DOT_PRO','ebdbf06090f7fcd532551060tfb9a5543');
+if(!defined('_INDEX_PAGE')) define('_INDEX_PAGE','index.php');
+$_SERVER['SCRIPT_NAME'] = '/index.php';
 include_once('../../../../init_conf/config.inc.php');
 /** 
 * @todo Construct modules class 
@@ -25,7 +27,7 @@ else
     $l=$get_lang['id'][0];
     $_GET['l']=$get_lang['id'][0];
 }
-//print('</script><script type="text/javascript" src="js/scripts/javaScript.js"></script><script type="text/javascript" src="js/scripts/jscript.js"></script>');
+//print('</script><script type="text/javascript" src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'js/scripts/javaScript.js"></script><script type="text/javascript" src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'js/scripts/jscript.js"></script>');
 require_once("../../../language/".$get_lang['shortcut'][0].".php");
 inclusion::construct_class_file($_GET['page'].'.php',$_GET,$_POST);
 ?>

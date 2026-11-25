@@ -12,13 +12,13 @@ if(!defined('_PHP_DOT_PRO') || _PHP_DOT_PRO!='ebdbf06090f7fcd532551060tfb9a5543'
 
  **/
 
- ?><script type="text/javascript" language="javascript" src="http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/jcontent_examples/js/jquery.easing.min.1.3.js"></script>
+ ?><script type="text/javascript" language="javascript" src="http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/jcontent_examples/js/jquery.easing.min.1.3.js"></script>
 
-<script type="text/javascript" language="javascript" src="http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/jcontent_examples/js/jquery.jcontent.0.8.min.js"></script>
+<script type="text/javascript" language="javascript" src="http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/jcontent_examples/js/jquery.jcontent.0.8.min.js"></script>
 
-<link href="http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/jcontent_examples/css/demo.css" rel="stylesheet" type="text/css"/>  
+<link href="http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/jcontent_examples/css/demo.css" rel="stylesheet" type="text/css"/>  
 
-<link href="http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/jcontent_examples/css/jcontent.css" rel="stylesheet" type="text/css"/> 
+<link href="http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/jcontent_examples/css/jcontent.css" rel="stylesheet" type="text/css"/> 
 
 <script type="text/javascript" language="javascript">
 

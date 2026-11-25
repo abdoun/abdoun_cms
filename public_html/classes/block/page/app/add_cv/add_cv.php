@@ -355,7 +355,7 @@ class add_cv
                 $body.='<tr bgcolor="#f0f0f0"><td>Marital:</td><td>'.$this->marital[$this->post['marital']].'</td></tr>';
                 $body.='<tr bgcolor="#f0f0f0"><td>License:</td><td>'.$this->license[$this->post['license']].'</td></tr>';                
                 $body.='<tr bgcolor="#f0f0f0"><td>Smoker:</td><td>'.$this->status[$this->post['smoker']].'</td></tr>';
-                $body.='<tr bgcolor="#f0f0f0"><td>CV file:</td><td><a href="http://'.$_SERVER['SERVER_NAME'].'/upload/cv/'.$file_name.'" target="_blank">download</a></td></tr>';
+                $body.='<tr bgcolor="#f0f0f0"><td>CV file:</td><td><a href="http://'.$_SERVER['HTTP_HOST'].'/upload/cv/'.$file_name.'" target="_blank">download</a></td></tr>';
                 $body.='</table>';
                 if(email::send('CV from: '.$this->post['email'],$this->post['email'],$this->post['name'],'hr@-sy.com',$body))
                 {

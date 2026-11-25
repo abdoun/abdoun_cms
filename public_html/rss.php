@@ -49,12 +49,12 @@ class rss
           }
 		  $this->html.='<item>';
 		  $this->html.='<title>'.addslashes($resu01['title']).'</title>';
-          //$this->html.='<link>http://'.$_SERVER['SERVER_NAME'].'/'.$output_link.'</link>';
-          $this->html.='<link>http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).$output_link.'</link>';
-          //$this->html.='<link>http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).$output_link.'</link>';
+          //$this->html.='<link>http://'.$_SERVER['HTTP_HOST'].'/'.$output_link.'</link>';
+          $this->html.='<link>http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).$output_link.'</link>';
+          //$this->html.='<link>http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).$output_link.'</link>';
 		  $this->html.='<description>'.addslashes($resu01['descr']).'</description>';
           //$this->html.='<pubDate>'.addslashes(date('D M j G:i:s T Y',mktime($resu01['_date']))).'</pubDate>';
-          //$this->html.='<image><url>http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'upload/'.$resu01['icon'].'</url><title>'.addslashes($resu01['title']).'</title><link>http://'.$_SERVER['SERVER_NAME'].'</link></image>';
+          //$this->html.='<image><url>http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(basename(__FILE__))).'upload/'.$resu01['icon'].'</url><title>'.addslashes($resu01['title']).'</title><link>http://'.$_SERVER['HTTP_HOST'].'</link></image>';
 		  $this->html.='</item>';
     	  $this->rss_content($resu01['id'],$l);
     	}				 

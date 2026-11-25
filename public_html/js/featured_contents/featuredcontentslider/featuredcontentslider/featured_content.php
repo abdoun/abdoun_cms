@@ -28,7 +28,7 @@ if(!defined('_PHP_DOT_PRO') || _PHP_DOT_PRO!='ebdbf06090f7fcd532551060tfb9a5543'
 	PAGE STRUCTURE
 */
 #page-wrap<?=$resu['id'][0];?>				{ width: 500px; margin: 25px auto; position: relative; min-height: 500px;
-											  background: url(http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/featuredcontentslider/featuredcontentslider/images_/bg.png) top center; }
+											  background: url(http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/featuredcontentslider/featuredcontentslider/images_/bg.png) top center; }
 /*
 	TYPOGRAPHY
 */
@@ -53,19 +53,19 @@ if(!defined('_PHP_DOT_PRO') || _PHP_DOT_PRO!='ebdbf06090f7fcd532551060tfb9a5543'
 #movers-row<?=$resu['id'][0];?>				{ margin: -55px 40px 0 62px; }
 #movers-row<?=$resu['id'][0];?> div			{ width: 20%; float: left; }
 #movers-row<?=$resu['id'][0];?> div a.cross-link 				{ float: right; }
-.photo-meta-data							{ background: url(http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/featuredcontentslider/featuredcontentslider/images_/transpBlack.png); padding: 10px; height: 30px; 
+.photo-meta-data							{ background: url(http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/featuredcontentslider/featuredcontentslider/images_/transpBlack.png); padding: 10px; height: 30px; 
 											  width:400px;margin-left:7px; margin-top: -55px; position: relative; z-index: 9999; color: white; }
 .photo-meta-data span 						{ font-size: 13px; }
 .cross-link									{ display: block; width: 62px; margin-top: -14px; 
 											  position: relative; padding-top: 15px; z-index: 9999; }
-.active-thumb 								{ background: transparent url(http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/featuredcontentslider/featuredcontentslider/images_/icon-uparrowsmallwhite.png) top center no-repeat; }
+.active-thumb 								{ background: transparent url(http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/featuredcontentslider/featuredcontentslider/images_/icon-uparrowsmallwhite.png) top center no-repeat; }
 -->
 </style>
 
 	<!--<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>-->
-	<script type="text/javascript" src="http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/featuredcontentslider/featuredcontentslider/js/jquery-easing-1.3.pack.js"></script>
-	<script type="text/javascript" src="http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/featuredcontentslider/featuredcontentslider/js/jquery-easing-compatibility.1.2.pack.js"></script>
-	<script type="text/javascript" src="http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/featuredcontentslider/featuredcontentslider/js/coda-slider.1.1.1.pack.js"></script>	
+	<script type="text/javascript" src="http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/featuredcontentslider/featuredcontentslider/js/jquery-easing-1.3.pack.js"></script>
+	<script type="text/javascript" src="http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/featuredcontentslider/featuredcontentslider/js/jquery-easing-compatibility.1.2.pack.js"></script>
+	<script type="text/javascript" src="http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>js/featured_contents/featuredcontentslider/featuredcontentslider/js/coda-slider.1.1.1.pack.js"></script>	
 	<script type="text/javascript">
 	
 		var theInt = null;
@@ -141,9 +141,9 @@ if(!defined('_PHP_DOT_PRO') || _PHP_DOT_PRO!='ebdbf06090f7fcd532551060tfb9a5543'
                         }?>
         				<div class="panel" title="Panel 1">
         					<div class="wrapper">
-        						<img src="http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>upload/<?=$res[icon][$i];?>" alt="temp" width="420" height="285" />
+        						<img src="http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>upload/<?=$res[icon][$i];?>" alt="temp" width="420" height="285" />
         						<div class="photo-meta-data">
-        							<?=$res[title][$i];?> <a href="http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>?l=<?=$res['language'][$i];?>&id=<?=$res['id'][$i];?>&type=<?=$this->params['type'];?>&page=<?=$this->params['page'];?>&event=<?=$event;?>&title=<?=clean::clean_url($res['title'][$i]);?>" style="color:#11a8e7;font-size:11px;"><?=_MORE;?></a><br />
+        							<?=$res[title][$i];?> <a href="http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>?l=<?=$res['language'][$i];?>&id=<?=$res['id'][$i];?>&type=<?=$this->params['type'];?>&page=<?=$this->params['page'];?>&event=<?=$event;?>&title=<?=clean::clean_url($res['title'][$i]);?>" style="color:#11a8e7;font-size:11px;"><?=_MORE;?></a><br />
         							<span><?=$res['descr'][$i];?></span>
         						</div>
         					</div>
@@ -153,13 +153,13 @@ if(!defined('_PHP_DOT_PRO') || _PHP_DOT_PRO!='ebdbf06090f7fcd532551060tfb9a5543'
 			</div>
 		</div>
 
-		<a href="#1" class="cross-link active-thumb"><img src="http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>upload/<?=$res['icon'][0];?>" width="60" height="40" class="nav-thumb" alt="temp-thumb" /></a>
+		<a href="#1" class="cross-link active-thumb"><img src="http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>upload/<?=$res['icon'][0];?>" width="60" height="40" class="nav-thumb" alt="temp-thumb" /></a>
 		<div id="movers-row<?=$resu['id'][0];?>">
         <?for($i=1;$i<6;$i++)
                 {
                     if($res['permission'][$i]==1 || ($res['permission'][$i]==2 && $_SESSION['username']!='' && membership::content_member($res['id'][$i])))
                     {
-                        ?><div><a href="#2" class="cross-link"><img src="http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>upload/<?=$res['icon'][$i];?>" width="60" height="40" class="nav-thumb" alt="temp-thumb" /></a></div><?
+                        ?><div><a href="#2" class="cross-link"><img src="http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>upload/<?=$res['icon'][$i];?>" width="60" height="40" class="nav-thumb" alt="temp-thumb" /></a></div><?
                     }
                 }?>
 		</div>

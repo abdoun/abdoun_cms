@@ -128,7 +128,7 @@ class questionair
         ?>
         <!--<form method="post" action="classes/block/page/ajax.php?l=<?=$this->params[l];?>&page=questionair&type=questionair&event=act" id="questionair_us" name="questionair_us" onsubmit="return validate_(this);">-->
         <div style="margin-left: auto;margin-right: auto;text-align: center;"><!--<select name='forms' id="forms" onchange="_('#questionair_result').html('<center><img src=\'images/loading.gif\' border=\'0\'/></center>');
-                _.get('classes/block/page/ajax.php?l=<?=$this->params[l];?>&page=questionair&type=questionair&event=form&forms=' + this.value, function(data) {
+                _.get('http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'classes/block/page/ajax.php?l=<?=$this->params[l];?>&page=questionair&type=questionair&event=form&forms=' + this.value, function(data) {
                   _('#fields').html(data);      
                 });">-->
                 <!--<option></option>-->
@@ -139,7 +139,7 @@ class questionair
                 if($res['permission'][$key]==1 || ($res['permission'][$key]==2 && $_SESSION['username']!='' && membership::forms_member($value)))
                 {
                     //print('<option value="'.$value.'">'.$res['name'][$key].'</option>');
-                    print('<a href="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'?l='.$this->params['l'].'&id=0&page=questionair&type=questionair&event=form&forms='.$value.'">'.$res['name'][$key].'</a><br />');
+                    print('<a href="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'?l='.$this->params['l'].'&id=0&page=questionair&type=questionair&event=form&forms='.$value.'">'.$res['name'][$key].'</a><br />');
                     if($i==1)
                     {
                         $id_default=$value;
@@ -151,7 +151,7 @@ class questionair
         <div id="fields">
         <script type="text/javascript">
             //_('#request_form_result').html('<center><img src=\'images/loading.gif\' border=\'0\'/></center>');
-        	//_.get('classes/block/page/ajax.php?l=<?=$this->params[l];?>&page=questionair&type=questionair&event=form&forms=<?=$id_default;?>', function(data) {
+        	//_.get('http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'classes/block/page/ajax.php?l=<?=$this->params[l];?>&page=questionair&type=questionair&event=form&forms=<?=$id_default;?>', function(data) {
             //      _('#fields').html(data);      
             //    });
         </script>
@@ -185,8 +185,8 @@ class questionair
             	}
                 else
                 {
-                    _("#questionair_result").html("<center><img src='http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>images/loading.gif' border='0'/></center>");
-                    _.post("http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?l=<?=$this->params[l];?>&page=questionair&type=questionair&event=act&",
+                    _("#questionair_result").html("<center><img src='http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>images/loading.gif' border='0'/></center>");
+                    _.post("http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?l=<?=$this->params[l];?>&page=questionair&type=questionair&event=act&",
                      _("#questionair_us").serialize(),
                     function(data){
                         _('#questionair_result').html(data);
@@ -207,7 +207,7 @@ class questionair
                     font-family: tahoma,arial;
                 }
             -->
-            </style><form method="post" action="http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?l=<?=$this->params[l];?>&page=questionair&type=questionair&event=act" id="questionair_us" name="questionair_us" onsubmit="return validate_(this);">
+            </style><form method="post" action="http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>classes/block/page/ajax.php?l=<?=$this->params[l];?>&page=questionair&type=questionair&event=act" id="questionair_us" name="questionair_us" onsubmit="return validate_(this);">
         <table width='100%' id="tab1">
           <?
           $res=mysql_db::get_records_by_key("select evaluation from forms where enabled>1 and id=".$this->params['forms']."");
@@ -250,8 +250,8 @@ class questionair
 				<td><input align="middle" id="code" name="code" maxlength="8" size="20" type="text" onkeyup="this.value=this.value.toUpperCase();this.value=trim(this.value);" /></td>
     		 </tr>
              <tr>
-                <td align="left"><font face="Verdana" size="2" color="#000"><a href="http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>image.php" target="ifr" id="change_code"><?=_CHANGE." "._CODE;?></a></font></td>
-    			<td><iframe name="ifr" id="ifr" src="http://<?=$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>image.php" width="120" height="80" scrolling="no" frameborder="0" marginwidth="0"></iframe></td>
+                <td align="left"><font face="Verdana" size="2" color="#000"><a href="http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>image.php" target="ifr" id="change_code"><?=_CHANGE." "._CODE;?></a></font></td>
+    			<td><iframe name="ifr" id="ifr" src="http://<?=$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE));?>image.php" width="120" height="80" scrolling="no" frameborder="0" marginwidth="0"></iframe></td>
        		 </tr>
              <tr>
                 <td> </td>

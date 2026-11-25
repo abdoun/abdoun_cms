@@ -58,7 +58,7 @@ DEFINE('_PARTICIPATE_US','اشترك معنا');
 DEFINE('_NO_SEARCH','عذراً لم تملأ كلمة البحث');
 DEFINE('_NEWS_LETTER','النشرة البريدية');
 define('_JOIN','انضم إلى قائمتنا البريدية <span> <a href="">اشترك معنا</a></span>');
-define('_FOOTER','CopyRight &copy; '.$_SERVER['SERVER_NAME'].' 2012');
+define('_FOOTER','CopyRight &copy; '.$_SERVER['HTTP_HOST'].' 2012');
 DEFINE('_PAGE','الصفحة');
 DEFINE('_ARCHIVE','أرشيف');
 DEFINE('_SUBSCRIBE','اشترك');

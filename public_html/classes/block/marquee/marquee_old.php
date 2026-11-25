@@ -45,14 +45,14 @@ class marquee
                 $content.='<a class="marquee" title="'.$res['title'][$i].' '.$res['descr'][$i].'"'.$selected.' href="'.$href.'?l='.$l.'&id='.$res['id'][$i].'&type='.$res['type'][$i].'&page=content&event='.$event.'&title='.clean::clean_url($res['title'][$i]).'">';
                 $content.=$res['title'][$i];
                 $content.='</a>';
-                $content.=' <img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/icon.png" align="center" height="20" /> ';
+                $content.=' <img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/icon.png" align="center" height="20" /> ';
             }
             elseif($res['permission'][$i]==2 && $_SESSION['username']!='' && membership::content_member($res['id'][$i]))
             {
                 $content.='<a class="marquee" title="'.$res['title'][$i].' '.$res['descr'][$i].'"'.$selected.' href="'.$href.'?l='.$l.'&id='.$res['id'][$i].'&type='.$res['type'][$i].'&page=content&event='.$event.'&title='.clean::clean_url($res['title'][$i]).'">';
                 $content.=$res['title'][$i];
                 $content.='</a>';
-                $content.=' <img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/icon.png" align="center" height="20" /> ';
+                $content.=' <img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/icon.png" align="center" height="20" /> ';
             }
             else
             {
@@ -68,7 +68,7 @@ class marquee
        $html=str_replace('<tag />',$content,$html);
        //$html=str_replace('<tag />',_FOOTER,$html);
        $html=str_replace('<tag_align />',_ALIGN,$html);
-       //$html=str_replace('<img_tag_ />','<img src="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/icon.png" align="center" height="20" />',$html);//
+       //$html=str_replace('<img_tag_ />','<img src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'upload/icon.png" align="center" height="20" />',$html);//
        $html=self::replace_url($html);
        
        //$html=str_replace('<tag />','',$html);

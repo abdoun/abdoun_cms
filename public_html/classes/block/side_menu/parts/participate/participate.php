@@ -28,7 +28,7 @@ class participate
        //$html=str_replace('href=""','href="page_'.$_GET['l'].'_0_join_join_'.$_GET['brand'].'_0_'.clean::clean_url(_PARTICIPATE_US).'"',$html);
        $page=str_replace('index.php','',$_SERVER['SCRIPT_NAME']);
        $page=str_replace('backup.php','',$_SERVER['SCRIPT_NAME']);
-       //$html=str_replace('href=""','href="http://'.$_SERVER['SERVER_NAME'].$page.'?l='.$_GET['l'].'&id=0&type=join&page=join&event=0&title='.clean::clean_url(_PARTICIPATE_US).'"',$html);
+       //$html=str_replace('href=""','href="http://'.$_SERVER['HTTP_HOST'].$page.'?l='.$_GET['l'].'&id=0&type=join&page=join&event=0&title='.clean::clean_url(_PARTICIPATE_US).'"',$html);
        $html=str_replace('href=""',' href="?l='.$_GET['l'].'&id=0&type=join&page=join&event=0&title='.clean::clean_url(_PARTICIPATE_US).'" ',$html);
        
        ##$html=self::template_include();

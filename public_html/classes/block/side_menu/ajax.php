@@ -2,6 +2,8 @@
 session_start();
 header("Content-Type: text/html; charset=utf-8");
 define('_PHP_DOT_PRO','ebdbf06090f7fcd532551060tfb9a5543');
+if(!defined('_INDEX_PAGE')) define('_INDEX_PAGE','index.php');
+$_SERVER['SCRIPT_NAME'] = '/index.php';
 if($_POST['id']!='' && !empty($_POST['answerr']) && !isset($_COOKIE['cookie']))
 {
 	setcookie("cookie",$_POST['id'],mktime()+60*60*24*30);
@@ -29,7 +31,7 @@ else
     $l=$get_lang['id'][0];
     $_GET['l']=$get_lang['id'][0];
 }
-print('<script type="text/javascript" src="js/scripts/jquery.js"></script><script type="text/javascript" src="js/scripts/jquery.corner.js"></script><script type="text/javascript" src="js/scripts/javaScript.js"></script><script type="text/javascript" src="js/scripts/jscript.js"></script>');
+print('<script type="text/javascript" src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'js/scripts/jquery.js"></script><script type="text/javascript" src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'js/scripts/jquery.corner.js"></script><script type="text/javascript" src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'js/scripts/javaScript.js"></script><script type="text/javascript" src="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'js/scripts/jscript.js"></script>');
 require_once("../../../language/".$get_lang['shortcut'][0].".php");
 inclusion::construct_class_file('../../../classes/block/side_menu/parts/'.$_GET['page'].'/'.$_GET['page'].'.php',$_GET,$_POST);
 ?>

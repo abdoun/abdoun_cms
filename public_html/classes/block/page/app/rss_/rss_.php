@@ -55,7 +55,7 @@ class rss_
         $html=$this->template_include();
         $html=$this->navigator($html);
         ob_start();
-        print('<script type="text/javascript">location.href="http://'.$_SERVER['SERVER_NAME'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'rss.php?l='.$this->params['l'].'";</script>');        
+        print('<script type="text/javascript">location.href="http://'.$_SERVER['HTTP_HOST'].substr($_SERVER['SCRIPT_NAME'],0,-strlen(_INDEX_PAGE)).'rss.php?l='.$this->params['l'].'";</script>');        
         $content = ob_get_contents();
         ob_end_clean();
         echo str_replace('<content_tag />',$content,$html);

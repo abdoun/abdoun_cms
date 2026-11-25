@@ -26,7 +26,7 @@ class uri
             }
             else
             {
-                $uri='http://'.$_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME'].$url; 
+                $uri='http://'.$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME'].$url; 
             }
             $uri=str_replace('index.php','',$uri);
             $uri=str_replace('backup.php','',$uri);
