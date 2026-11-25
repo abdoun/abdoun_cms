@@ -15,8 +15,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: framework
-    ports:
-      - "3307:3306"
     volumes:
       - db_data:/var/lib/mysql
       - ./admin_init_conf/framework.sql:/docker-entrypoint-initdb.d/framework.sql
