@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xml:lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="cache-control" content="no-cache" />
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for <domain_tag /> website" href="<rss_tag />" />
     <meta http-equiv="Content-Language" content="<shortcut_tag />" />
@@ -30,6 +31,8 @@
     </script>
     <javascript_proto />
     <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="style.responsive.css" type="text/css" media="screen" />
+    <noscript><style type="text/css">.art-nav-toggle{display:none!important;}.art-nav-outer{display:block!important;position:static!important;}</style></noscript>
     <!--[if IE 6]><link rel="stylesheet" href="style.ie6.css" type="text/css" media="screen" /><![endif]-->
     <!--[if IE 7]><link rel="stylesheet" href="style.ie7.css" type="text/css" media="screen" /><![endif]-->
 
@@ -64,14 +67,15 @@
                                 </div>
             </div>
             <div class="cleared reset-box"></div><div class="art-nav">
+	<button class="art-nav-toggle" type="button" aria-controls="art-nav-menu" aria-expanded="false">&#9776; Menu</button>
 	<div class="art-nav-l"></div>
 	<div class="art-nav-r"></div>
-<div class="art-nav-outer">
+<div class="art-nav-outer" id="art-nav-menu">
 	<header_tag />
 </div>
 </div>
 <div class="cleared reset-box"></div>
-<div style="background-color: #ACBEBC;height: 20px;font-size: 14px;padding: 5px;"><marquee_tag /></div>
+<div class="art-marquee-bar" style="background-color: #ACBEBC;height: 20px;font-size: 14px;padding: 5px;"><marquee_tag /></div>
 <div class="art-content-layout">
                 <div class="art-content-layout-row">
                 <right_tag />
@@ -100,6 +104,24 @@
     <div class="cleared"></div>
     <p class="art-page-footer"><a href="">&nbsp;</a> &nbsp;</p>
 </div>
+<script type="text/javascript">
+/* Mobile navigation toggle - plain JS so it works even when jQuery is unavailable. */
+(function () {
+    var button = document.querySelector('.art-nav-toggle');
+    var menu = document.querySelector('.art-nav-outer');
+    if (!button || !menu) { return; }
+    button.addEventListener('click', function () {
+        var open = menu.classList.toggle('is-open');
+        button.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && menu.classList.contains('is-open')) {
+            menu.classList.remove('is-open');
+            button.setAttribute('aria-expanded', 'false');
+        }
+    });
+})();
+</script>
 
 </body>
 </html>

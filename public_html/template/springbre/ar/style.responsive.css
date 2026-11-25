@@ -1,0 +1,484 @@
+/* ==========================================================================
+   Responsive layer for the "springbre" front-end template.
+
+   Loaded after style.css. The original Artisteer canvas is locked to
+   1100px; these rules keep that design on wide screens but let it shrink,
+   stack and collapse into a mobile menu on smaller screens.
+   ========================================================================== */
+
+/* ---------- 1. Fluid canvas ---------- */
+html,
+body {
+    min-width: 0 !important;
+}
+
+body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    overflow-x: hidden;
+}
+
+img,
+iframe,
+video,
+object,
+embed {
+    max-width: 100%;
+    height: auto;
+}
+
+#art-main {
+    width: 100%;
+}
+
+/* The decorative glare strip was pinned to 1100px */
+#art-page-background-glare {
+    min-width: 0;
+}
+
+#art-page-background-glare-image {
+    width: 100%;
+    max-width: 3500px;
+}
+
+/* The sheet becomes a centred, fluid canvas */
+.art-sheet {
+    width: 100%;
+    max-width: 1100px;
+    box-sizing: border-box;
+}
+
+.art-sheet-body {
+    box-sizing: border-box;
+}
+
+/* Center the header artwork instead of offsetting it by half a fixed width */
+div.art-header-center {
+    width: 100%;
+    left: 0;
+}
+
+div.art-header-png,
+div.art-header-jpeg {
+    left: 0;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+}
+
+/* ---------- 2. Content pinned to fixed widths by the block templates ----------
+   These inline <style> blocks live in the page body, so they need
+   !important to win over the equal-specificity rules defined there. */
+#art-main #content,
+#art-main #search_result,
+#art-main #login_result,
+#art-main #vote_result,
+#art-main #main_menu div {
+    max-width: 100% !important;
+    box-sizing: border-box;
+}
+
+.art-postcontent div,
+.art-blockcontent-body div,
+.art-vmenublockcontent-body div,
+#art-main #page {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="search"],
+input[type="email"],
+textarea,
+select {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Wide tables scroll inside their column rather than stretching the page */
+.art-article table,
+table.art-article,
+.art-postcontent table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.art-marquee-bar {
+    height: auto !important;
+    min-height: 30px;
+    padding: 3px 5px !important;
+    overflow: hidden;
+}
+
+/* ---------- 3. Mobile menu toggle (hidden on desktop) ---------- */
+.art-nav-toggle {
+    display: none;
+    float: right;
+    margin: 4px 6px 4px 0;
+    padding: 7px 14px;
+    border: 0;
+    border-radius: 3px;
+    background: #25698D;
+    color: #fff;
+    font: bold 14px/1.3 tahoma, Arial, sans-serif;
+    cursor: pointer;
+}
+
+.art-nav-toggle:hover,
+.art-nav-toggle:focus {
+    background: #1F2C32;
+}
+
+/* ---------- 4. Tablets and smaller ---------- */
+@media (max-width: 980px) {
+    .art-sheet {
+        margin-top: 24px;
+    }
+
+    .art-footer-text,
+    .art-page-footer {
+        padding: 8px;
+    }
+
+    .art-hmenu a .t {
+        padding: 0 9px;
+        font-size: 12px;
+    }
+
+    .art-hmenu ul a {
+        width: 160px;
+    }
+
+    .art-block,
+    .art-vmenublock {
+        margin: 8px;
+    }
+}
+
+/* ---------- 5. Phones / narrow tablets ---------- */
+@media (max-width: 760px) {
+    #art-page-background-glare {
+        display: none;
+    }
+
+    .art-sheet {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .art-sheet-body,
+    .art-sheet-cc {
+        padding: 0;
+    }
+
+    /* Decorative sheet corners are no longer needed */
+    .art-sheet-tl,
+    .art-sheet-tr,
+    .art-sheet-bl,
+    .art-sheet-br,
+    .art-sheet-tc,
+    .art-sheet-bc,
+    .art-sheet-cl,
+    .art-sheet-cr {
+        display: none;
+    }
+
+    /* Header */
+    div.art-header,
+    div.art-header-clip {
+        height: 110px;
+    }
+
+    div.art-header-center,
+    div.art-header-png,
+    div.art-header-jpeg {
+        width: 100%;
+        height: 110px;
+    }
+
+    div.art-header-jpeg img {
+        max-width: 90px;
+        padding: 8px !important;
+    }
+
+    div.art-logo {
+        top: 58px;
+        margin-left: 8px;
+        max-width: 90%;
+    }
+
+    .art-logo-name,
+    .art-logo-text {
+        font-size: 18px !important;
+        white-space: normal;
+    }
+
+    /* Navigation turns into a collapsible vertical menu */
+    .art-nav {
+        min-height: 44px;
+    }
+
+    .art-nav-l,
+    .art-nav-r {
+        display: none;
+    }
+
+    .art-nav-toggle {
+        display: inline-block;
+    }
+
+    .art-nav-outer {
+        display: none;
+        position: absolute;
+        top: 44px;
+        left: 0;
+        right: 0;
+        width: auto;
+        z-index: 1000;
+        background: #fff;
+        border: 1px solid #8DB8C9;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, .18);
+    }
+
+    .art-nav-outer.is-open {
+        display: block;
+    }
+
+    .art-hmenu,
+    .art-hmenu ul {
+        float: none !important;
+        position: static !important;
+        visibility: visible !important;
+        display: block !important;
+        width: 100% !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: none !important;
+    }
+
+    .art-hmenu li {
+        float: none !important;
+        width: 100%;
+        clear: both;
+    }
+
+    .art-hmenu .art-hmenu-separator {
+        display: none;
+    }
+
+    .art-hmenu a {
+        display: block;
+        height: auto;
+        overflow: visible;
+        white-space: normal;
+    }
+
+    .art-hmenu a .l,
+    .art-hmenu a .r {
+        display: none;
+    }
+
+    .art-hmenu a .t {
+        display: block;
+        padding: 10px 16px;
+        margin: 0;
+        line-height: 1.4;
+        text-align: left;
+        color: #1F4E63;
+        font-size: 14px;
+        border-bottom: 1px solid #E3EEF2;
+    }
+
+    .art-hmenu a:hover .t,
+    .art-hmenu li:hover a .t,
+    .art-hmenu a.active .t {
+        color: #25698D;
+        background: #F2F8FA;
+    }
+
+    .art-hmenu ul a,
+    .art-hmenu ul a:link,
+    .art-hmenu ul a:visited,
+    .art-hmenu ul a:hover {
+        width: auto;
+        height: auto;
+        white-space: normal;
+        background: none;
+        border: 0;
+        border-left: 3px solid #B6D2DD;
+        text-indent: 0;
+        padding: 8px 12px 8px 20px;
+        line-height: 1.4;
+        color: #315868;
+    }
+
+    /* Main content first, sidebar stacked underneath */
+    .art-content-layout,
+    .art-content-layout-row {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .art-content-layout-row {
+        display: flex !important;
+        flex-direction: column;
+    }
+
+    .art-layout-cell,
+    .art-sidebar1,
+    .art-content {
+        display: block !important;
+        float: none !important;
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .art-content {
+        order: 1;
+    }
+
+    .art-sidebar1 {
+        order: 2;
+        margin-top: 16px;
+    }
+
+    .art-post-body {
+        padding: 6px;
+    }
+
+    .art-block-body,
+    .art-vmenublock-body {
+        padding: 6px;
+    }
+
+    .art-footer-text,
+    .art-page-footer {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+}
+
+/* ---------- 6. Very small screens ---------- */
+@media (max-width: 480px) {
+    div.art-header,
+    div.art-header-clip,
+    div.art-header-center,
+    div.art-header-png,
+    div.art-header-jpeg {
+        height: 90px;
+    }
+
+    div.art-logo {
+        top: 48px;
+    }
+
+    .art-logo-name,
+    .art-logo-text {
+        font-size: 16px !important;
+    }
+
+    .art-postcontent h1,
+    .art-postcontent h2 {
+        font-size: 22px;
+    }
+
+    .art-postcontent h3 {
+        font-size: 18px;
+    }
+
+    .art-postcontent p,
+    .art-blockcontent-body {
+        font-size: 13px;
+    }
+
+    .art-postcontent blockquote {
+        margin: 10px;
+        padding: 0 0 0 16px;
+    }
+
+    #main_menu div {
+        width: auto !important;
+        margin: 4px;
+    }
+}
+
+/* ---------- 7. Right-to-left adjustments ---------- */
+.art-nav-toggle {
+    float: left;
+    margin: 4px 0 4px 6px;
+}
+
+div.art-logo {
+    left: auto;
+    right: 0;
+    margin-left: 0;
+    margin-right: 12px;
+    text-align: right;
+}
+
+.art-hmenu a .t {
+    text-align: right;
+}
+
+.art-hmenu ul a,
+.art-hmenu ul a:link,
+.art-hmenu ul a:visited,
+.art-hmenu ul a:hover {
+    border-left: 0;
+    border-right: 3px solid #B6D2DD;
+    padding: 8px 20px 8px 12px;
+    text-align: right;
+}
+
+.art-postcontent blockquote {
+    padding: 0 16px 0 0;
+}
+
+/* ---------- 8. News ticker ----------
+   The global "height:auto" rule above would otherwise blow the ticker's
+   height="20" icons up to their natural 128px size. Keep the icons at
+   their intended size and let the ticker fit inside narrow screens. */
+.art-marquee-bar .ticker-title img {
+    width: auto !important;
+    height: 20px !important;
+    max-width: none !important;
+    max-height: 20px !important;
+    vertical-align: middle;
+    margin: 0 3px;
+}
+
+.art-marquee-bar .ticker-wrapper.has-js {
+    width: 100% !important;
+    max-width: 1040px;
+    height: auto !important;
+    min-height: 30px;
+    margin: 0;
+    padding: 0 6px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.art-marquee-bar .ticker {
+    width: calc(100% - 75px) !important;
+    max-width: none;
+    height: 30px;
+}
+
+.art-marquee-bar .ticker-title,
+.art-marquee-bar .ticker-content,
+.art-marquee-bar .ticker-swipe {
+    padding-top: 4px !important;
+}
+
+.art-marquee-bar .ticker-content,
+.art-marquee-bar .ticker-swipe {
+    max-width: 100%;
+}
+
+.art-marquee-bar .ticker-swipe {
+    height: 26px;
+}
