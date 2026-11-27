@@ -170,13 +170,13 @@ DEFINE('_DONE','Registering has been completed succesfully');
 DEFINE('_F_P','Advertisements');
 DEFINE('_HEADER','<img src="images/header.jpg" width="1100" height="366" />');
 
-// Privacy notice / cookie consent modal
-DEFINE('_PRIVACY_TITLE','Privacy Notice');
-DEFINE('_PRIVACY_SUBTITLE','Datenschutzerklärung');
-DEFINE('_PRIVACY_LEAD','Please read this notice before using the site.');
-DEFINE('_PRIVACY_WARNING_TITLE','Important: please do not share private data');
-DEFINE('_PRIVACY_WARNING','This website runs on an older content management system. For your own safety, please do not enter or send any personal, private or confidential information (such as passwords, national ID numbers, bank or card details, medical information, or copies of official documents) through the forms on this site.');
+// Demo / privacy notice and cookie consent modal
+DEFINE('_PRIVACY_TITLE','Demo & Privacy Notice');
+DEFINE('_PRIVACY_SUBTITLE','Please read this notice before using the site');
+DEFINE('_PRIVACY_LEAD','This website is now a demo and is provided for demonstration purposes only.');
+DEFINE('_PRIVACY_WARNING_TITLE','Important: please do not enter real or personal data');
+DEFINE('_PRIVACY_WARNING','Because this is a demo, please do not enter or submit any real, personal, private or confidential information - such as your real name, passwords, national ID numbers, bank or card details, medical information, or copies of official documents - through the forms on this site. Please use only fictional test data. Any information you enter may be visible to other visitors and is not protected.');
 DEFINE('_PRIVACY_COOKIES','This site uses essential cookies to remember your language and your choice. By clicking OK you confirm that you have read and understood this notice. Your choice is stored in a cookie in your browser and this notice will not be shown again on this device.');
 DEFINE('_PRIVACY_OK','OK, I understand');
-DEFINE('_PRIVACY_LINK','Privacy');
+DEFINE('_PRIVACY_LINK','Demo / Privacy');
 ?>

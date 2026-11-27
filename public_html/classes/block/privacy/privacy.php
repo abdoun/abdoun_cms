@@ -1,7 +1,7 @@
 <?php
 if(!defined('_PHP_DOT_PRO') || _PHP_DOT_PRO!='ebdbf06090f7fcd532551060tfb9a5543'){exit;}
 /**
- * Privacy notice / cookie consent modal ("Datenschutzerklärung").
+ * Demo / privacy notice and cookie consent modal.
  *
  * The returned markup is injected into the <privacy_tag /> placeholder of
  * both springbre templates at the END of the front controllers, after the global
@@ -10,7 +10,7 @@ if(!defined('_PHP_DOT_PRO') || _PHP_DOT_PRO!='ebdbf06090f7fcd532551060tfb9a5543'
  *
  * No JavaScript -> the overlay stays hidden, so the site remains usable.
  * Clicking OK stores consent in a browser cookie for one year and a small
- * "Privacy" tab is shown so the notice can be reopened at any time.
+ * "Demo / Privacy" tab is shown so the notice can be reopened at any time.
  */
 class privacy
 {
